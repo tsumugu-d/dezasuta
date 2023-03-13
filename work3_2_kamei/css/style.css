@@ -63,7 +63,7 @@ h1 {
 }
 
 .block div {
-    max-width: 32%;
+    width: 32%;
     background: white;
 }
 
@@ -89,7 +89,7 @@ h1 {
     }
 
     .block div {
-        max-width: 95%;
+        width: 95%;
         margin: 10px auto;
     }
 }
