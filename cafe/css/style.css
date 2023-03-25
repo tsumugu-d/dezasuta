@@ -99,7 +99,7 @@ main {
 .lead_wrap {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 100px 5px 80px 5px;
+    padding: 100px 10px 80px 10px;
     text-align: center;
 }
 
@@ -126,7 +126,7 @@ main {
     display: flex;
     max-width: 1000px;
     margin: 0 auto 95px auto;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 .about_pic {
@@ -137,7 +137,7 @@ main {
     border-bottom-right-radius: 20%;
 }
 
-.about_text {
+.about_content {
     width: 50%;
     padding-left: 8%;
     box-sizing: border-box;
@@ -145,18 +145,18 @@ main {
 
 .about_wrap h2 {
     width: 265px;
-    margin-top: 70px;
+    margin-top: 60px;
     margin-bottom: 37px;
 }
 
-.about_wrap h3 {
+.about_lead {
     margin-bottom: 20px;
     font-weight: normal;
     font-size: 44px;
     line-height: 1.39;
 }
 
-.about_wrap p {
+.about_text {
     padding-right: 3%;
     font-size: 16px;
     line-height: 1.63;
@@ -166,7 +166,7 @@ main {
 .menu_wrap {
     max-width: 1000px;
     margin: 0 auto 90px auto;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 .menu_wrap ul {
@@ -222,7 +222,7 @@ main {
 .event_wrap {
     max-width: 1000px;
     margin: 0 auto 70px auto;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 .event_wrap h2 {
@@ -273,7 +273,7 @@ main {
 .footer_wrap {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 75px 5px;
+    padding: 75px 10px;
 }
 
 .footer_wrap div {
@@ -288,12 +288,14 @@ main {
 .footer_wrap div p {
     font-size: 20px;
     line-height: 1.95;
+    color: black;
 }
 
 .footer_wrap > p {
     margin-top: 75px;
     font-size: 16px;
     text-align: center;
+    color: black;
 }
 
 .pagetop {
