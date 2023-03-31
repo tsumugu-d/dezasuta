@@ -8,17 +8,31 @@
     <title>デザインカフェ</title>
     <meta name="description" content="デザインカフェのサイトです。">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
 
     <header id="header">
         <div class="header_slider">
-            <div><img src="images/pc_first-100.jpg" alt="店内の様子"></div>
+            <picture>
+                <source srcset="images/sp_main_vs@2x-100.jpg" media="(max-width:767px)">
+                <img src="images/pc_first-100.jpg" alt="店内の様子">
+            </picture>
         </div>
         <div class="header_wrap">
             <h1 class="header_logo"><img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"></h1>
             <nav class="pc_nav">
+                <ul>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                </ul>
+            </nav>
+            <div class="sp_btn"><span></span></div>
+            <nav class="sp_nav">
                 <ul>
                     <li><a href="#about">ABOUT US</a></li>
                     <li><a href="#menu">MENU</a></li>
@@ -35,13 +49,16 @@
             <p class="lead_01">Have a happy day From a cup of coffee.</p>
             <p class="lead_02">ハッピーに溢れる1日を<br>1杯のコーヒーから。</p>
             <p class="lead_03">
-                毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ<br>
-                足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。
+                毎日を丁寧に大切に過ごしたい。<br class="br_sp">だからこそ一杯一杯丁寧にコーヒーを入れ<br>
+                足を運んでくれるお客さんには落ち着く空間と<br class="br_sp">こだわりのコーヒーを提供したい。
             </p>
         </div>
 
         <section id="about" class="about_wrap">
-            <div class="about_pic"><img src="images/pc_about-100.jpg" alt="コーヒーで乾杯をする"></div>
+            <picture class="about_pic">
+                <source srcset="images/about_us@2x-100.jpg" media="(max-width:767px)">
+                <img src="images/pc_about-100.jpg" alt="コーヒーで乾杯をする">
+            </picture>
             <div class="about_content">
                 <h2><img src="images/about_us@2x.png" alt="ABOUT US"></h2>
                 <p class="about_lead">私たちが提供する<br>こだわりのコーヒー</p>
@@ -123,6 +140,15 @@
         <a href="#header"><img src="images/to_top@2x.png" alt="PAGE TOP"></a>
     </div>
 
+    <script>
+        $(function () {
+            $('.sp_btn, .sp_nav li').on('click', function () {
+                $('.sp_nav').fadeToggle();
+                $('.sp_btn').toggleClass('open');
+            });
+
+        });
+    </script>
 </body>
 
 </html>
