@@ -177,6 +177,12 @@ html {
     }
 }
 
+@media screen and (max-width: 767px) {
+    .header_logo {
+        width: 188px;
+    }
+}
+
 /* メイン */
 /* リード */
 main {
@@ -590,7 +596,7 @@ main {
 
 @media screen and (max-width: 767px) {
     .footer_wrap {
-        padding-top: 22px;
+        padding-top: 38px;
         padding-bottom: 30px;
     }
 
@@ -599,7 +605,7 @@ main {
     }
 
     .footer_wrap h2 {
-        margin-bottom: 39px;
+        margin-bottom: 20px;
     }
 
     .footer_wrap div p {
@@ -608,7 +614,7 @@ main {
     }
 
     .footer_wrap > p {
-        margin-top: 43px;
+        margin-top: 38px;
     }
 
     .pagetop {

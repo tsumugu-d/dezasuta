@@ -147,6 +147,43 @@
                 $('.sp_btn').toggleClass('open');
             });
 
+            // 一旦、ボタンを隠す
+            $('.pagetop').hide();
+            // 一定pxスクロールしたら(今は100px)ボタンがフェードインで現れる
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.pagetop').fadeIn();
+                } else {
+                    $('.pagetop').fadeOut();
+                }
+            });
+
+            // フッター付近での動き
+            $('.pagetop').hide();
+            $(window).on("scroll", function () {
+                scrollHeight = $(document).height();
+                scrollPosition = $(window).height() + $(window).scrollTop();
+                footHeight = $('.footer_wrap').innerHeight();
+                if (scrollHeight - scrollPosition <= footHeight) {
+                    // ページトップボタンがフッター手前に来たらpositionをfixedからabsoluteに変更
+                    $('.pagetop').css({
+                        position: "absolute",
+                        bottom: footHeight,
+                    });
+                } else {
+                    if (window.matchMedia('(max-width: 768px)').matches) {
+                        $('.pagetop').css({
+                            position: 'fixed',
+                            bottom: '20px',
+                        } else {
+                            $('.pagetop').css({
+                                position: 'fixed',
+                                bottom: '40px',
+                            });
+                        })
+                    }
+                }
+            });
         });
     </script>
 </body>
