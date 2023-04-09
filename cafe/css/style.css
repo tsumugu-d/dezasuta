@@ -451,25 +451,59 @@ main {
     display: flex;
 }
 
-.gallery_slider div {
-    width: 100%;
-    /* サイズを調整しようとしましたが、幅20％の中でスライドするようになってしまいました。
-    width: 20%; */
-}
-
 .gallery_slider img {
-    max-width: 100%;
+    width: 100%;
 }
 
-* {
-    min-height: 0;
-    min-width: 0;
+/* 矢印調整 */
+.slick-arrow {
+    z-index: 1;
 }
 
-/* .slick-prev:before,
-.slick-next:before {
-    color: #000 !important;
-} */
+.slick-next::before,
+.slick-next::after,
+.slick-prev::before,
+.slick-prev::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+.slick-next::after,
+.slick-prev::after {
+    width: 26px;
+    height: 26px;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+}
+
+.slick-next {
+    right: 22%;
+}
+.slick-next::after {
+    right: 4px;
+    transform: rotate(45deg);
+}
+
+.slick-prev {
+    left: 22%;
+}
+.slick-prev::after {
+    left: 4px;
+    transform: rotate(-135deg);
+}
+
+@media screen and (max-width: 1100px) {
+    .slick-next::after,
+    .slick-prev::after {
+        width: 20px;
+        height: 20px;
+        border-top: 3px solid #fff;
+        border-right: 3px solid #fff;
+    }
+}
 
 @media screen and (max-width: 767px) {
     .gallery_wrap {
@@ -479,6 +513,22 @@ main {
     .gallery_wrap h2 {
         width: 137px;
         margin-bottom: 17px;
+    }
+
+    .slick-next::after,
+    .slick-prev::after {
+        width: 15px;
+        height: 15px;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+    }
+
+    .slick-next {
+        right: 5%;
+    }
+
+    .slick-prev {
+        left: 5%;
     }
 }
 
@@ -561,7 +611,7 @@ main {
 
 /* ACCESS */
 .access_wrap {
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: 0 auto;
 }
 
