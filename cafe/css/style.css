@@ -183,6 +183,20 @@ html {
     }
 }
 
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+    color: #fff;
+}
+
+/* スライダー調整 */
+.slick-dots {
+    bottom: 20px;
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
 /* メイン */
 /* リード */
 main {
@@ -428,19 +442,29 @@ main {
     margin: 0 auto 60px auto;
 }
 
-.gallery_wrap {
-    max-width: 1920px;
-    margin: 0 auto 60px auto;
-}
-
 .gallery_wrap h2 {
     width: 238px;
     margin: 0 auto 18px auto;
 }
 
-.gallery_wrap div {
+.gallery_slider {
     display: flex;
 }
+
+.gallery_slider div {
+    width: 100%;
+    /* サイズを調整しようとしましたが、幅20％の中でスライドするようになってしまいました。
+    width: 20%; */
+}
+
+.gallery_slider img {
+    max-width: 100%;
+}
+
+/* .slick-prev:before,
+.slick-next:before {
+    color: #000 !important;
+} */
 
 @media screen and (max-width: 767px) {
     .gallery_wrap {

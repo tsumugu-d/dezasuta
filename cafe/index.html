@@ -7,18 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>デザインカフェ</title>
     <meta name="description" content="デザインカフェのサイトです。">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 
 <body>
 
     <header id="header">
         <div class="header_slider">
-            <picture>
-                <source srcset="images/sp_main_vs@2x-100.jpg" media="(max-width:767px)">
-                <img src="images/pc_first-100.jpg" alt="店内の様子">
-            </picture>
+            <div>
+                <picture>
+                    <source srcset="images/sp_main_vs@2x-100.jpg" media="(max-width:767px)">
+                    <img src="images/pc_first-100.jpg" alt="店内の様子">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <source srcset="images/sp_main_vs_2@2x-100.jpg" media="(max-width:767px)">
+                    <img src="images/slider_2.jpg" alt="店内の様子">
+                </picture>
+            </div>
         </div>
         <div class="header_wrap">
             <h1 class="header_logo"><img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"></h1>
@@ -91,11 +103,13 @@
 
         <section id="gallery" class="gallery_wrap">
             <h2><img src="images/gallery@2x.png" alt="GALLERY"></h2>
-            <div>
+
+            <div class="gallery_slider">
                 <div><img src="images/pc_gallary_05-100.jpg" alt="内装"></div>
                 <div><img src="images/pc_gallary_04-100.jpg" alt="コーヒー豆"></div>
                 <div><img src="images/pc_gallary_03-100.jpg" alt="内装"></div>
                 <div><img src="images/pc_gallary_02-100.jpg" alt="内装"></div>
+                <div><img src="images/pc_gallary_01-100.jpg" alt="ラテアートを作る店員"></div>
                 <div><img src="images/pc_gallary_01-100.jpg" alt="ラテアートを作る店員"></div>
             </div>
         </section>
@@ -142,11 +156,30 @@
 
     <script>
         $(function () {
+            // ハンバーガーメニュー
             $('.sp_btn, .sp_nav li').on('click', function () {
                 $('.sp_nav').fadeToggle();
                 $('.sp_btn').toggleClass('open');
             });
 
+            // ヘッダーのオートプレイ
+            $('.header_slider').slick({
+                autoplaySpeed: 2000,
+                autoplay: true,
+                dots: true,
+                arrows: false,
+            });
+
+            // ギャラリーのオートプレイ
+            $('.gallery_slider').slick({
+                infinite: true,
+                slideToShow: 5,
+                slideToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+
+            // ページトップボタン
             // 一旦、ボタンを隠す
             $('.pagetop').hide();
             // 一定pxスクロールしたら(今は100px)ボタンがフェードインで現れる
@@ -159,15 +192,18 @@
             });
 
             // フッター付近での動き
-            $('.pagetop').hide();
+            // $('.pagetop').hide();
             $(window).on("scroll", function () {
                 scrollHeight = $(document).height();
                 scrollPosition = $(window).height() + $(window).scrollTop();
-                footHeight = $('.footer_wrap').innerHeight();
+                footHeight = $('.footer_wrap').innerHeight() - 120;
                 if (scrollHeight - scrollPosition <= footHeight) {
                     // ページトップボタンがフッター手前に来たらpositionをfixedからabsoluteに変更
+                    $('body').css({
+                        position: 'relative',
+                    });
                     $('.pagetop').css({
-                        position: "absolute",
+                        position: 'absolute',
                         bottom: footHeight,
                     });
                 } else {
@@ -175,12 +211,12 @@
                         $('.pagetop').css({
                             position: 'fixed',
                             bottom: '20px',
-                        } else {
-                            $('.pagetop').css({
-                                position: 'fixed',
-                                bottom: '40px',
-                            });
-                        })
+                        });
+                    } else {
+                        $('.pagetop').css({
+                            position: 'fixed',
+                            bottom: '40px',
+                        });
                     }
                 }
             });
