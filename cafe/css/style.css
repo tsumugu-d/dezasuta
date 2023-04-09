@@ -461,6 +461,11 @@ main {
     max-width: 100%;
 }
 
+* {
+    min-height: 0;
+    min-width: 0;
+}
+
 /* .slick-prev:before,
 .slick-next:before {
     color: #000 !important;
