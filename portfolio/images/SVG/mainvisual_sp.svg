@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 431.75 689.83">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="31.84" width="375" height="685"/>
+    </clipPath>
+  </defs>
+  <g id="_画像" data-name="画像">
+    <g class="cls-2">
+      <image width="3095" height="4945" transform="scale(.14)" xlink:href="../../../../ポートフォリオ/designcomp_kamei/sozai/sp_top_mainvisual_72.jpg"/>
+    </g>
+  </g>
+</svg>
