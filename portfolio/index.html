@@ -7,24 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>つむぐ。デザイン</title>
     <meta name="description" content="福井県を拠点に活動するwebデザイナー「碧井」のポートフォリオです。">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
-<body>
+<body class="toppage">
     <header id="header">
         <div>
             <picture>
-                <source srcset="images/SVG/mainvisual_sp.svg" media="(max-width:767px)">
-                <img src="images/2x/mainvisual_pc@2x-100.jpg" alt="メインビジュアル">
+                <source srcset="images/mainvisual_sp@2x-80.jpg" media="(max-width:767px)">
+                <img src="images/mainvisual_pc@2x-80.jpg" alt="メインビジュアル">
             </picture>
         </div>
-        <!-- 以下、SVG表示できるか再確認用 -->
-        <img src="images/SVG/mainvisual_pc.svg" alt="メインビジュアル">
-        <img src="images/SVG/icon_camera.svg" alt="カメラ">
-        <img src="images/SVG/book.svg" alt="本">
-        <img src="images/SVG/profile.svg" alt="プロフィール">
-        <img src="images/SVG/アセット 33.svg" alt="鳥">
         <div class="header_wrap">
             <h1>つむぐ。デザイン</h1>
             <nav class="pc_nav">
@@ -33,162 +31,279 @@
                     <li><a href="#skills">できること</a></li>
                     <li class="has-child"><a href="#works">つくったもの</a>
                         <ul>
-                            <li><a href="#">ウェブデザイン</a></li>
-                            <li><a href="#">グラフィックデザイン</a></li>
+                            <li><a href="#">ウェブ</a></li>
+                            <li><a href="#">グラフィック</a></li>
                             <li><a href="#">イラスト</a></li>
                             <li><a href="#">写真</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">相談する</a></li>
-                    <li><a href="#">作者あとがき</a></li>
+                    <li><a href="#contact">相談する</a></li>
+                    <li><a href="#about">作者あとがき</a></li>
                 </ul>
             </nav>
         </div>
-        <div><span>Scroll</span></div>
+        <div class="header_logo">
+            <img src="images/logo.svg" alt="つむぐ。デザイン">
+            <p>物語をつむぐように、<br>デザインをつくる。</p>
+        </div>
+        <div class="scrolldown"><span>Scroll</span></div>
     </header>
 
     <main>
         <section id="concept">
-            <h2>はじめに</h2>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <h2 class="title_left">はじめに</h2>
+            <div class="line_left"></div>
+            <div class="concept_slider">
+                <div><img src="images/concept_01_pc@2x.png" alt="コンセプト1ページ目"></div>
+                <div><img src="images/concept_02_pc@2x.png" alt="コンセプト2ページ目"></div>
+                <div><img src="images/concept_03_pc@2x.png" alt="コンセプト3ページ目"></div>
             </div>
-            <div><img src="images/SVG/hands_01.svg" alt="原稿用紙を持つ手"></div>
+            <div class="pic_hand"><img src="images/hands_01.svg" alt="原稿用紙を持つ手"></div>
         </section>
 
         <section id="skills">
-            <h2>できること</h2>
-            <p>デザインからコーディング、イラスト制作、写真撮影・編集まで、トータルでご提案することができます。</p>
-
+            <h2 class="title_right">できること</h2>
+            <!-- <div class="line_right"></div> -->
+            <div class="skill_wrap_01">
+                <p class="lead">
+                    デザインからコーディング、イラスト制作、写真撮影・編集まで、トータルでご提案することができます。
+                </p>
+                <!-- 以下は、divよりsectionでまとめた方がベターでしょうか？ -->
+                <div class="skill_wrap_02 skill_left">
+                    <h3 class="skill_title_left_01">ウェブデザイン<br>グラフィックデザイン</h3>
+                    <div>
+                        <div class="skill_feature">
+                            <div class="icon_01"><img src="images/icon_design_01.svg" alt="ウェブ・グラフィックデザイン"></div>
+                            <div class="toollogo_01"><img src="images/icon_design_02.svg" alt="デザインツール"></div>
+                        </div>
+                        <p class="skill_summary">
+                            HPやLP、バナー広告等のWeb制作から、チラシや名刺、パンフレット等の印刷物まで、ご要望や世界観を実現できるデザインをご提案します。
+                        </p>
+                        <p class="skill_tool">ツール： Illustrator/Photoshop</p>
+                    </div>
+                </div>
+            </div>
+            <div class="skill_wrap_02 skill_right">
+                <h3 class="skill_title_right">コーディング</h3>
+                <div>
+                    <div class="skill_feature">
+                        <div class="icon_02"><img src="images/icon_cording_01.svg" alt="コーディング"></div>
+                        <div class="toollogo_02"><img src="images/icon_cording_02.svg" alt="コーディングツール"></div>
+                    </div>
+                    <p class="skill_summary">
+                        デザインカンプを基に、HTML・CSSで再現します。動きを加えたものや、各デバイスに合わせたレスポンシブなコーディングにも対応いたします。
+                    </p>
+                    <p class="skill_tool">ツール： HTML/CSS/JavaScript</p>
+                </div>
+            </div>
+            <div class="skill_wrap_02 skill_left">
+                <h3 class="skill_title_left_02">イラスト</h3>
+                <div>
+                    <div class="skill_feature">
+                        <div class="icon_03"><img src="images/icon_illust_01.svg" alt="イラスト"></div>
+                        <div class="toollogo_03"><img src="images/icon_illust_02.svg" alt="イラストツール"></div>
+                    </div>
+                    <p class="skill_summary">
+                        デジタルツールや透明水彩絵の具を用いて、ご希望の雰囲気に合わせたテイストで作成いたします。当サイトで使用しているイラストやアイコンは自作のものです。
+                    </p>
+                    <p class="skill_tool">ツール： Procreate</p>
+                </div>
+            </div>
+            <div class="skill_wrap_02 skill_right">
+                <h3 class="skill_title_right">写真撮影・編集</h3>
+                <div>
+                    <div class="skill_feature">
+                        <div class="icon_04"><img src="images/icon_camera_01.svg" alt="写真撮影・編集"></div>
+                        <div class="toollogo_03"><img src="images/icon_camera_02.svg" alt="写真編集ツール"></div>
+                    </div>
+                    <p class="skill_summary">
+                        人物や店舗の内装など、見た人に良さや雰囲気を伝える写真を撮影いたします。また、イメージに合わせ他写真編集が可能です。
+                    </p>
+                    <p class="skill_tool">ツール： 一眼レフ/Lightroom</p>
+                </div>
+            </div>
+            <div class="pic_hand"><img src="images/hands_02.svg" alt="物語を書く手"></div>
         </section>
 
         <section id="works">
-            <h2>つくったもの</h2>
-            <ul>
-                <li><a href="#">ウェブ</a></li>
-                <li><a href="#">グラフィック</a></li>
-                <li><a href="#">イラスト</a></li>
-                <li><a href="#">写真</a></li>
-            </ul>
-            <p>これまでつむいだデザインやイラスト、写真をご紹介いたします。<br>お好きな物語を手に取ってご覧ください。</p>
+            <h2 class="title_left">つくったもの</h2>
+            <div class="line_left"></div>
+            <div class="works_wrap_01">
+                <div class="works_wrap_02">
+                    <div><img src="images/line_ink.svg" alt="インク壺と羽ペン"></div>
+                    <ul>
+                        <li><a href="#"><img src="images/btn_web.svg" alt="ウェブデザイン実績リンク"></a></li>
+                        <li><a href="#"><img src="images/btn_graphic.svg" alt="グラフィックデザイン実績リンク"></a></li>
+                        <li><a href="#"><img src="images/btn_illust.svg" alt="イラスト実績リンク"></a></li>
+                        <li><a href="#"><img src="images/btn_photo.svg" alt="写真実績リンク"></a></li>
+                    </ul>
+                </div>
+                <div class="works_box"></div>
+                <p class="lead">これまでつむいだデザインやイラスト、写真をご紹介いたします。<br>お好きな物語を手に取ってご覧ください。</p>
+            </div>
+            <div class="pic_hand"><img src="images/hands_03.svg" alt="本を開く手"></div>
         </section>
 
         <section id="contact">
-            <h2>相談する</h2>
-            <p>デザインやイラスト、写真に関することなど、お客様が抱えているお悩みなどについて、お気軽にご相談・お問い合わせください。</p>
-
+            <h2 class="title_right">相談する</h2>
+            <!-- <div class="line_right"></div> -->
+            <p class="lead">デザインやイラスト、写真に関することなど、お客様が抱えているお悩みなどについて、お気軽にご相談・お問い合わせください。</p>
+            <form
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfhhBUnG9k05X9TqRr8JcZLNAiKkFSnX1Ux6qVUrf9XfPv7IQ/formResponse">
+                <div>
+                    <label class="contact_name" for="name">お名前</label>
+                    <input id="name" type="text" name="entry.1060629140" placeholder="">
+                </div>
+                <div>
+                    <label for="email">メールアドレス</label>
+                    <input id="email" type="text" name="entry.187525437" placeholder="">
+                </div>
+                <label class="msg" for="msg">お問い合わせ内容</label>
+                <textarea id="msg" name="entry.644460066" placeholder=""></textarea>
+                <button type="submit" name="button">おくる</button>
+            </form>
+            <div class="pic_hand"><img src="images/hands_04.svg" alt="投函する手"></div>
         </section>
 
         <section id="about">
-            <div>
-                <h2>作者あとがき</h2>
-                <p>
+            <div class="about_wrap_01">
+                <div>
+                    <h2 class="title_left">作者<br>　あとがき</h2>
+                    <div class="line_left"></div>
+                </div>
+                <p class="lead">
                     当サイトを最後までご覧いただき、ありがとうございました。<br>
                     お悩みや世界観を一つの物語としてデザインにつむげるよう、<br>
                     日々スキルアップに励んでいきます。<br>
                     みなさまとご一緒にお仕事ができることを楽しみにしています。
                 </p>
             </div>
-            <div>
-                <p>碧井-aoi-</p>
-                <ul>
-                    <li><a href="">デザインアカウント</a></li>
-                    <li><a href="">写真アカウント</a></li>
-                </ul>
-            </div>
-            <ul class="tab">
-                <li><a href="#about-me">About</a></li>
-                <li><a href="#history">History</a></li>
-                <li><a href="#like">Like</a></li>
-                <li><a href="#bird">Birds</a></li>
-            </ul>
+            <div class="about_wrap_02">
+                <div class="my_name">
+                    <div class="my_face"><img src="images/profile@2x.png" alt="プロフィールイラスト"></div>
+                    <p>碧井-aoi-</p>
+                    <div class="logo_insta"><img src="images/logo_insta.svg" alt="インスタグラムロゴ"></div>
+                    <ul>
+                        <li>
+                            <div></div><a href="">デザインアカウント</a>
+                        </li>
+                        <li>
+                            <div></div><a href="">写真アカウント</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about_content">
+                    <ul class="tab">
+                        <li class="tab_01"><a href="#about_me">About</a></li>
+                        <li class="tab_02"><a href="#history">History</a></li>
+                        <li class="tab_03"><a href="#like">Like</a></li>
+                        <li class="tab_04"><a href="#bird">Bird</a></li>
+                    </ul>
 
-            <div id="about-me" class="">
-                <h3>わたしのこと</h3>
-                <p>
-                    自然豊かな福井県で生まれ育ちました。<br>
-                    緑と青が好きで、屋号の「碧井」は二つの色を混ぜた碧色に由来します。<br>
-                    <br>
-                    小さい頃の夢は、鳥博士とデザイナーでした。<br>
-                    たくさんの出会いに支えられ、文系から理系の大学院に入学して鳥の研究を実現。そして、デザイナーとしての一歩を歩み始めました。<br>
-                    お客様の気持ちに寄り添い、形にできるデザイナーを目指します。
-                </p>
-            </div>
+                    <div id="about_me" class="area">
+                        <div><img src="images/line_fukui.svg" alt="福井県"></div>
+                        <h3>わたしのこと</h3>
+                        <p>
+                            自然豊かな福井県で生まれ育ちました。<br>
+                            緑と青が好きで、屋号の「碧井」は二つの色を混ぜた碧色に由来します。<br>
+                            <br>
+                            小さい頃の夢は、鳥博士とデザイナーでした。<br>
+                            たくさんの出会いに支えられ、文系から理系の大学院に入学して鳥の研究を実現。そして、デザイナーとしての一歩を歩み始めました。<br>
+                            お客様の気持ちに寄り添い、形にできるデザイナーを目指します。
+                        </p>
+                        <!--/area-->
+                    </div>
 
-            <div id="history" class="">
-                <h3>これまでのこと</h3>
-                <p>
-                    大学院卒業後は、化学系製造業の研究職で仕事をしていました。<br>
-                    院生時代や前職で得た、課題を解決するために検証を重ねた経験や、新しいことを学び挑戦した経験は、デザイナーの仕事にも活かすことができます。<br>
-                    <br>
-                    そして一番の学びは、できないと思っていたことでも、やってみると新しい発見が得られるということ。<br>
-                    これからも、新しいことに挑戦しながら、お客様の悩みを解決できる方法を探っていきたいです。
-                </p>
-            </div>
+                    <div id="history" class="area">
+                        <div><img src="images/line_books.svg" alt="積まれた本"></div>
+                        <h3>これまでのこと</h3>
+                        <p>
+                            大学院卒業後は、化学系製造業の研究職で仕事をしていました。<br>
+                            院生時代や前職で得た、課題を解決するために検証を重ねた経験や、新しいことを学び挑戦した経験は、デザイナーの仕事にも活かすことができます。<br>
+                            <br>
+                            そして一番の学びは、できないと思っていたことでも、やってみると新しい発見が得られるということ。<br>
+                            これからも、新しいことに挑戦しながら、お客様の悩みを解決できる方法を探っていきたいです。
+                        </p>
+                        <!--/area-->
+                    </div>
 
-            <div id="like" class="">
-                <h3>すきなこと</h3>
-                <ul>
-                    <li>
-                        <h4>絵を描くこと</h4>
-                        <p>翼のある人をよく描きます。</p>
-                    </li>
-                    <li>
-                        <h4>人を撮ること</h4>
-                        <p>人がいることで、物語性が増す瞬間が好きです。</p>
-                    </li>
-                    <li>
-                        <h4>物語を読むこと</h4>
-                        <p>小説、漫画、アニメなど。最近はヒューマンドラマに惹かれています。</p>
-                    </li>
-                    <li>
-                        <h4>猫と触れ合うこと</h4>
-                        <p>ふわふわと寄り添ってくれる愛猫に毎日癒されています。</p>
-                    </li>
-                    <li>
-                        <h4>鳥を見ること</h4>
-                        <p>青い鳥を見た日はテンションが上がります。</p>
-                    </li>
-                </ul>
-            </div>
+                    <div id="like" class="area">
+                        <div><img src="images/line_cat.svg" alt="愛猫"></div>
+                        <h3>すきなこと</h3>
+                        <ul>
+                            <li>
+                                <h4>絵を描くこと</h4>
+                                <p>翼のある人をよく描きます。</p>
+                            </li>
+                            <li>
+                                <h4>人を撮ること</h4>
+                                <p>人がいることで、物語性が増す瞬間が好きです。</p>
+                            </li>
+                            <li>
+                                <h4>物語を読むこと</h4>
+                                <p>小説、漫画、アニメなど。最近はヒューマンドラマに惹かれています。</p>
+                            </li>
+                            <li>
+                                <h4>猫と触れ合うこと</h4>
+                                <p>ふわふわと寄り添ってくれる愛猫に毎日癒されています。</p>
+                            </li>
+                            <li>
+                                <h4>鳥を見ること</h4>
+                                <p>青い鳥を見た日はテンションが上がります。</p>
+                            </li>
+                        </ul>
+                        <!--/area-->
+                    </div>
 
-            <div id="bird" class="">
-                <h3>とりのこと</h3>
-                <p>
-                    近所で見た青い羽のオナガが、鳥を好きになったきっかけです。<br>
-                    鳥たちが持つ優雅な翼の形や、多彩で鮮やかな羽の色が特に好きです。<br>
-                    <br>
-                    鳥はこれまで読んだ多くの物語にも登場します。<br>
-                    幸せを運ぶ青い鳥、舌切り雀、鶴の恩返し……。<br>
-                    親指姫を外に連れ出したのも鳥のツバメです。<br>
-                    身近な存在ですが、美しいだけでなく、教訓を与え、世界を広げる存在としても数多く描かれています。
-                </p>
+                    <div id="bird" class="area">
+                        <div><img src="images/line_bird.svg" alt="オナガ"></div>
+                        <h3>とりのこと</h3>
+                        <p>
+                            近所で見た青い羽のオナガが、鳥を好きになったきっかけです。<br>
+                            鳥たちが持つ優雅な翼の形や、多彩で鮮やかな羽の色が特に好きです。<br>
+                            <br>
+                            鳥はこれまで読んだ多くの物語にも登場します。<br>
+                            幸せを運ぶ青い鳥、舌切り雀、鶴の恩返し……。<br>
+                            親指姫を外に連れ出したのも鳥のツバメです。<br>
+                            身近な存在ですが、美しいだけでなく、教訓を与え、世界を広げる存在としても数多く描かれています。
+                        </p>
+                        <!--/area-->
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer_wrap">
+        <div class="footer_pic"></div>
+        <div class="footer_logo"><img src="images/logo.svg" alt="つむぐ。デザインロゴ"></div>
         <ul>
             <li><a href="#concept">はじめに</a></li>
             <li><a href="#skills">できること</a></li>
             <li class="has-child"><a href="#works">つくったもの</a>
                 <ul>
-                    <li><a href="#">ウェブデザイン</a></li>
-                    <li><a href="#">グラフィックデザイン</a></li>
+                    <li><a href="#">ウェブ</a></li>
+                    <li><a href="#">グラフィック</a></li>
                     <li><a href="#">イラスト</a></li>
                     <li><a href="#">写真</a></li>
                 </ul>
             </li>
-            <li><a href="#">相談する</a></li>
-            <li><a href="#">作者あとがき</a></li>
+            <li><a href="#contact">相談する</a></li>
+            <li><a href="#about">作者あとがき</a></li>
         </ul>
-        <small>&copy; 2023 Tsumugu Design all right reserved.</small>
-        <div>
-            <a href="#header"></a>
+        <p>&copy; 2023 Tsumugu. Design all right reserved.</p>
+        <div class="pagetop">
+            <a href="#header">表紙へ<br>もどる</a>
         </div>
     </footer>
+
+    <!-- jQuery本体 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- Slick本体とSlick呼び出し記述 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script src="js/script.js"></script>
 </body>

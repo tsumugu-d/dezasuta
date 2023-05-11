@@ -15,7 +15,9 @@ dl,
 dt,
 dd,
 ul,
-li {
+li,
+button,
+form {
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -25,6 +27,9 @@ li {
         "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN",
         "Hiragino Sans", sans-serif;
     font-weight: 400;
+    font-feature-settings: "palt";
+    /* 要確認 */
+    letter-spacing: 0.25em;
 }
 
 a {
@@ -45,6 +50,18 @@ img {
     border: none;
 }
 
+/* 背景など */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    background-image: url(../images/background_pc-80.jpg);
+    background-size: 100% auto;
+    height: 5000px;
+}
+
 /* ヘッダー */
 .header_wrap {
     position: absolute;
@@ -52,13 +69,24 @@ img {
     left: 0;
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center;
     width: 100%;
-    background: yellow;
+    height: 70px;
+    background: #ddd4c6;
+    box-sizing: border-box;
+    padding: 0 2% 0 4%;
+}
+
+.toppage .header_wrap {
+    background: rgba(255, 255, 255, 0.85);
 }
 
 .pc_nav {
     text-align: center;
+}
+
+h1 {
+    font-size: 30px;
 }
 
 .pc_nav ul {
@@ -70,7 +98,191 @@ img {
     display: block;
 }
 
-/* 下の層のulや矢印の起点にするための設定、位置は後ほど調整する */
 .pc_nav ul li {
     position: relative;
+    font-size: 18px;
+}
+
+.pc_nav ul li a {
+    display: block;
+    padding: 24px 30px;
+    transition: all 0.3s;
+}
+
+.pc_nav ul li li a {
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px 25px;
+    text-align: start;
+    font-size: 16px;
+}
+
+.pc_nav ul li li a::before {
+    content: "";
+    border-top: 1px solid;
+    width: 0.8em;
+    margin-right: 1em;
+}
+
+/* .pc_nav ul li a:hover {
+    color: red;
+} */
+
+/* 現在なぜか作者あとがきの後ろにも矢印出てる
+メニュー左にも、つくったものの下層リンクが存在している */
+.has-child::before {
+    content: "";
+    position: absolute;
+    right: 13px;
+    top: 27px;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+    transform: rotate(135deg);
+}
+
+.has-child ul {
+    position: absolute;
+    left: 25px;
+    top: 68px;
+    z-index: 4;
+    background: #ddd4c6;
+    width: 168px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.toppage .has-child ul {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+nav li.has-child:hover > ul,
+nav li.has-child ul li:hover > ul,
+nav li.has-child:active > ul,
+nav li.has-child ul li:active > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* メイン */
+
+/* h2は実績個別ページのみ設定変える */
+h2 {
+    font-size: 50px;
+    letter-spacing: 0.18em;
+    writing-mode: vertical-rl;
+}
+
+/* フッター */
+footer {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    margin-top: 280px;
+    background: white;
+    box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer_pic {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    height: 334px;
+    margin: 0 auto;
+    background-image: url(../images/footer_pic_pc.svg);
+    background-size: cover;
+}
+
+.footer_pic img {
+    width: 1360px;
+}
+
+.footer_logo {
+    position: relative;
+    top: -80px;
+    margin: 0 auto;
+    width: 170px;
+    z-index: 1;
+}
+
+footer ul {
+    position: relative;
+    top: -47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+footer ul ul {
+    display: block;
+    background: none !important;
+    top: 56px !important;
+}
+
+footer ul li {
+    position: relative;
+    font-size: 18px;
+}
+
+footer ul li a {
+    display: block;
+    padding: 24px 30px;
+    transition: all 0.3s;
+}
+
+footer ul li li a {
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px 25px;
+    text-align: start;
+    font-size: 16px;
+}
+
+footer ul li li a::before {
+    content: "";
+    border-top: 1px solid;
+    width: 0.8em;
+    margin-right: 1em;
+}
+
+footer ul li.has-child:hover > ul,
+footer ul li.has-child ul li:hover > ul,
+footer ul li.has-child:active > ul,
+footer ul li.has-child ul li:active > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+footer p {
+    position: relative;
+    z-index: 1;
+    margin-top: 102px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #987b5a;
+    text-align: center;
+}
+
+.pagetop {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 95px;
+    height: 220px;
+    background-image: url(../images/top_btn.svg);
+    background-size: cover;
+}
+
+.pagetop a {
+    position: absolute;
+    top: 85px;
+    left: 14%;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
 }
