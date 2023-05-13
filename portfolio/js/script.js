@@ -133,7 +133,7 @@ $(window).on("load", function () {
 $(".pagetop").hide();
 // 一定pxスクロールしたらボタンがフェードインで現れる
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 700) {
+    if ($(this).scrollTop() > 550) {
         $(".pagetop").fadeIn();
     } else {
         $(".pagetop").fadeOut();
@@ -156,4 +156,31 @@ $(window).on("scroll", function () {
             bottom: footHeight,
         });
     }
+});
+
+// 実績リストスライダー
+$("#website .list_slider").slick({
+    asNavFor: "#website .list_slider_title",
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    arrows: true,
+    variablewidth: true,
+});
+$("#website .list_slider_title").slick({
+    draggable: false,
+    arrows: false,
+    dots: true,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    variablewidth: true,
+});
+
+// 実績詳細ページスライダー
+$(".photo_slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    dots: true,
+    variablewidth: true,
+    adaptiveHeight: true,
 });

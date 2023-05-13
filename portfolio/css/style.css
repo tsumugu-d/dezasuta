@@ -8,10 +8,10 @@
 .header_logo {
     position: absolute;
     top: 35%;
+    left: 9%;
     display: flex;
     align-items: center;
     width: 50%;
-    margin-left: 9%;
 }
 
 .header_logo img {
@@ -20,7 +20,6 @@
 
 .header_logo p {
     margin-left: 6%;
-    box-sizing: border-box;
     font-size: 25px;
     line-height: 1.6;
 }
@@ -68,17 +67,13 @@
 }
 
 /* メイン */
-#concept,
-#works,
-#about {
-    position: relative;
-}
-
 .title_left {
+    position: relative;
     margin-left: 4%;
 }
 
 .title_right {
+    position: relative;
     margin-left: auto;
     margin-right: 4%;
 }
@@ -88,36 +83,13 @@
     line-height: 1.75;
 }
 
-/* .line_left {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-top: 1px solid #333333;
-    transform: rotate(-45deg);
-    transform-origin: 37% 22%;
-} */
-
-/* .line_right {
-    position: absolute;
-    right: 0;
-    width: 300px;
-    height: 300px;
-    border-bottom: 1px solid #333333;
-    transform: rotate(-135deg);
-    transform-origin: -4% 66%;
-} */
-
-.h2 {
-    position: relative;
-}
-
 .title_left::after {
     content: "";
     position: absolute;
-    left: -166px;
+    bottom: -40px;
+    left: -200px;
     width: 300px;
     height: 300px;
-    margin-top: -264px;
     transform: rotate(135deg);
     border-top: 1px solid #333333;
 }
@@ -125,31 +97,25 @@
 .title_right::after {
     content: "";
     position: absolute;
+    right: 0;
+    bottom: 40px;
     width: 300px;
     height: 300px;
-    margin-top: -40px;
-    margin-right: 4px;
-    transform: rotate(45deg);
+    transform: translateY(100%) rotate(45deg);
     border-top: 1px solid #333333;
 }
 
 /* はじめに */
 #concept {
     max-width: 1000px;
-    margin: 250px auto 135px auto;
+    margin: 250px auto 130px auto;
 }
 
-#concept h2,
-#concept .line_left {
-    position: relative;
+#concept .title_left {
     z-index: 1;
 }
 
-#concept h2::after {
-    left: -207px;
-}
-
-.concept_slider div {
+.concept_slider {
     width: 955px;
     margin: 0 auto;
 }
@@ -162,12 +128,12 @@
 }
 
 .slick-prev {
-    left: 38px;
+    left: 15px;
     z-index: 1;
 }
 
 .slick-next {
-    right: 52px;
+    right: 30px;
 }
 
 .slick-arrow::before {
@@ -196,61 +162,75 @@
 .slick-num {
     position: absolute;
     bottom: 35px;
-    right: -5%;
+    right: 0;
+    padding-right: 80px;
     font-size: 15px;
     color: #666666;
 }
 
+.slick-num::after {
+    content: "ページ";
+}
+
 #concept .pic_hand {
     width: 470px;
-    margin: 270px auto 0 auto;
+    margin: 254px auto 0 auto;
 }
 
 /* できること */
 #skills {
     max-width: 1000px;
-    margin: 0 auto 240px auto;
+    margin: 0 auto 225px auto;
 }
 
 #skills .lead {
-    writing-mode: vertical-rl;
+    height: 440px;
     margin-top: 20px;
     margin-right: 10%;
-    height: 440px;
+    writing-mode: vertical-rl;
+    font-feature-settings: initial;
 }
 
-.skill_wrap_01 {
+.skill_top {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
 }
 
-.skill_wrap_02 {
+.skill_wrap_left,
+.skill_wrap_right {
     display: flex;
-    width: 670px;
-    height: 470px;
-    margin-top: 100px;
+    width: 690px;
+    height: 472px;
+    margin-top: 85px;
 }
 
-.skill_wrap_01 .skill_wrap_02 {
+.skill_top .skill_wrap_left {
     margin-top: 0;
 }
 
-.skill_left {
+.skill_wrap_left {
     flex-direction: row-reverse;
     background-image: url(../images/paper_left@2x.png);
     background-size: cover;
 }
 
-.skill_right {
+.skill_wrap_right {
     background-image: url(../images/paper_right@2x.png);
     background-size: cover;
     margin-left: auto;
 }
 
-.skill_wrap_02 h3 {
-    display: inline-block;
-    width: 145px;
+.skill_wrap_left h3 {
+    width: 163px;
+}
+
+.skill_wrap_right h3 {
+    width: 142px;
+}
+
+.skill_wrap_left h3,
+.skill_wrap_right h3 {
     height: 395px;
     margin-top: 37px;
     padding-top: 37px;
@@ -258,69 +238,58 @@
     font-size: 20px;
     line-height: 1.75;
     writing-mode: vertical-rl;
+    font-feature-settings: initial;
 }
 
 .skill_title_left_01 {
-    padding-right: 45px;
-    border-left: 1px solid #333333;
+    padding-right: 60px;
+    border-left: 1px solid #987b5a;
 }
 
 .skill_title_right {
     padding-right: 51px;
-    border-right: 1px solid #333333;
+    border-right: 1px solid #987b5a;
 }
 
 .skill_title_left_02 {
-    padding-right: 61px;
-    border-left: 1px solid #333333;
+    padding-right: 77px;
+    border-left: 1px solid #987b5a;
 }
 
-.skill_wrap_02 > div {
+.skill_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 525px;
-    height: 395px;
 }
 
-/* .skill_left h3::after {
-    content: "";
-    position: absolute;
-    left: 51%;
-    display: inline-block;
-    width: 1px;
-    height: 395px;
-    background-color: #333333;
-    border-radius: 2px;
-} */
+.skill_wrap_left .skill_content {
+    padding: 65px 35px 55px 41px;
+    box-sizing: border-box;
+}
 
-/* .skill_left > div {
-    border-right: 1px solid #333333;
-} */
+.skill_wrap_right .skill_content {
+    padding: 65px 41px 55px 35px;
+    box-sizing: border-box;
+}
 
 .skill_feature {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    width: 525px;
-    height: 276px;
-    box-sizing: border-box;
 }
 
 .skill_left .skill_feature {
     flex-direction: row-reverse;
-    padding: 0px 40px 35px 50px;
-}
-
-.skill_right .skill_feature {
-    padding: 0px 50px 35px 40px;
 }
 
 .skill_summary {
-    padding: 10px 40px;
+    margin-top: 25px;
     line-height: 1.88;
     text-align: justify;
 }
 
 .skill_tool {
-    padding: 10px 40px;
     font-size: 13px;
 }
 
@@ -354,7 +323,7 @@
 
 #skills .pic_hand {
     width: 592px;
-    margin: 250px auto 0 auto;
+    margin: 255px auto 0 auto;
 }
 
 /* つくったもの */
@@ -381,7 +350,7 @@
     padding: 0 7%;
 }
 
-.works_wrap_02 div {
+.pic_ink {
     width: 155px;
 }
 
@@ -398,7 +367,7 @@
     transition: 0.3s;
 }
 
-.works_wrap_02_ul li:hover {
+.works_wrap_02 ul li:hover {
     display: block;
     margin-top: -30px;
     cursor: pointer;
@@ -407,7 +376,7 @@
 .works_box {
     width: 756px;
     height: 30px;
-    margin: 0 auto 70px auto;
+    margin: 0 auto 65px auto;
     background: #beb4a0;
 }
 
@@ -446,7 +415,7 @@
     font-size: 20px;
 }
 
-#contact form div {
+.form_content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -497,7 +466,7 @@
 
 #contact .pic_hand {
     width: 402px;
-    margin: 205px auto 0 auto;
+    margin: 190px auto 0 auto;
 }
 
 /* 作者あとがき */
@@ -511,8 +480,13 @@
     align-items: flex-end;
 }
 
-.about_wrap_01 div {
-    margin-bottom: 82px;
+.about_wrap_01 .title_left {
+    margin-bottom: 100px;
+}
+
+.about_wrap_01 .title_left::after {
+    bottom: -20px;
+    left: -180px;
 }
 
 .about_wrap_01 p {
@@ -547,14 +521,20 @@
 
 .my_name ul {
     text-align: start;
-    padding-left: 25%;
+    padding-left: 17%;
 }
 
 .my_name ul li {
-    padding-bottom: 13px;
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
-.my_name ul li div {
+.my_name ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: inline-block;
     border-left: 10px solid #736357;
     border-top: 10px solid transparent;
@@ -562,7 +542,7 @@
 }
 
 .my_name ul li a {
-    margin-left: 10px;
+    margin-left: 20px;
     border-bottom: 1px solid #333333;
 }
 
@@ -646,7 +626,11 @@
     border-left: 42px solid #807864;
 }
 
-.area div {
+.area {
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.15);
+}
+
+.area .pic {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -656,7 +640,7 @@
 .area h3 {
     width: 50%;
     font-size: 30px;
-    letter-spacing: 0.18;
+    letter-spacing: 0.18em;
     padding-bottom: 4px;
     padding-left: 42px;
 }
@@ -699,4 +683,26 @@
     margin-left: 42px;
     padding-left: 5%;
     line-height: 1.56em;
+}
+
+/* サンクスページ */
+.thankyou {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 55px 105px;
+    box-sizing: border-box;
+    background: #f1eee8;
+    border-radius: 30px;
+}
+
+.thankyou_pic {
+    width: 326px;
+}
+
+.thankyou p {
+    margin-left: 55px;
+    font-size: 20px;
+    line-height: 2.5;
 }
