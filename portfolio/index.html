@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>つむぐ。デザイン</title>
-    <meta name="description" content="物語をつむぐように、デザインをつくる。福井県を拠点に活動するwebデザイナー「碧井」のポートフォリオです。">
+    <title>つむぐ。デザイン｜物語をつむぐように、デザインをつくる。</title>
+    <meta name="description" content="福井県を拠点に活動するwebデザイナー「碧井」のポートフォリオです。">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
@@ -17,24 +17,39 @@
 
 <body class="toppage">
     <header id="header">
-        <div>
-            <picture>
-                <source srcset="images/mainvisual_sp@2x-80.jpg" media="(max-width:767px)">
-                <img src="images/mainvisual_pc@2x-80.jpg" alt="メインビジュアル">
-            </picture>
-        </div>
+        <picture>
+            <source srcset="images/mainvisual_sp@2x-80.jpg" media="(max-width:767px)">
+            <img src="images/mainvisual_pc@3x-80.jpg" alt="メインビジュアル">
+        </picture>
         <div class="header_wrap">
-            <h1>つむぐ。デザイン</h1>
+            <!-- <h1>つむぐ。デザイン</h1> -->
             <nav class="pc_nav">
                 <ul>
                     <li><a href="#concept">はじめに</a></li>
                     <li><a href="#skills">できること</a></li>
                     <li class="has-child"><a href="#works">つくったもの</a>
                         <ul>
-                            <li><a href="works/index.html">ウェブ</a></li>
-                            <li><a href="">グラフィック</a></li>
-                            <li><a href="">イラスト</a></li>
-                            <li><a href="">写真</a></li>
+                            <li><a href="works_webdesign/index.html">ウェブ</a></li>
+                            <li><a href="works_graphicdesign/index.html">グラフィック</a></li>
+                            <li><a href="works_illustration/index.html">イラスト</a></li>
+                            <li><a href="works_photo/index.html">写真</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">相談する</a></li>
+                    <li><a href="#about">作者あとがき</a></li>
+                </ul>
+            </nav>
+            <div class="sp_btn"><span></span></div>
+            <nav class="sp_nav">
+                <ul>
+                    <li><a href="#concept">はじめに</a></li>
+                    <li><a href="#skills">できること</a></li>
+                    <li class="has-child"><a href="#works">つくったもの</a>
+                        <ul>
+                            <li><a href="works_webdesign/index.html">ウェブ</a></li>
+                            <li><a href="works_graphicdesign/index.html">グラフィック</a></li>
+                            <li><a href="works_illustration/index.html">イラスト</a></li>
+                            <li><a href="works_photo/index.html">写真</a></li>
                         </ul>
                     </li>
                     <li><a href="#contact">相談する</a></li>
@@ -43,7 +58,7 @@
             </nav>
         </div>
         <div class="header_logo">
-            <img src="images/logo_02.svg" alt="つむぐ。デザイン">
+            <h1><img src="images/logo_02.svg" alt="つむぐ。デザイン"></h1>
             <p>物語をつむぐように、<br>デザインをつくる。</p>
         </div>
         <div class="scrolldown"><span>Scroll</span></div>
@@ -54,22 +69,35 @@
             <h2 class="title_left">はじめに</h2>
             <div class="line_left"></div>
             <div class="concept_slider">
-                <div><img src="images/concept_01_pc@2x.png" alt="コンセプト1ページ目"></div>
-                <div><img src="images/concept_02_pc@2x.png" alt="コンセプト2ページ目"></div>
-                <div><img src="images/concept_03_pc@2x.png" alt="コンセプト3ページ目"></div>
+                <picture>
+                    <source srcset="images/concept_01_sp@3x.png" media="(max-width:767px)">
+                    <img src="images/concept_01_pc@2x.png" alt="コンセプト1ページ目">
+                </picture>
+                <picture>
+                    <source srcset="images/concept_02_sp@3x.png" media="(max-width:767px)">
+                    <img src="images/concept_02_pc@2x.png" alt="コンセプト2ページ目">
+                </picture>
+                <picture>
+                    <source srcset="images/concept_03_sp@3x.png" media="(max-width:767px)">
+                    <img src="images/concept_03_pc@2x.png" alt="コンセプト3ページ目">
+                </picture>
             </div>
             <div class="pic_hand"><img src="images/hands_01.svg" alt="原稿用紙を持つ手"></div>
         </section>
 
         <section id="skills">
-            <h2 class="title_right">できること</h2>
+            <div class="skill_top_sp">
+                <p class="lead_sp">
+                    デザインからコーディング、イラスト制作、写真撮影・編集まで、トータルでご提案することができます。
+                </p>
+                <h2 class="title_right">できること</h2>
+            </div>
             <div class="skill_top">
                 <p class="lead">
                     デザインからコーディング、イラスト制作、写真撮影・編集まで、トータルでご提案することができます。
                 </p>
-                <!-- 以下は、divよりsectionでまとめた方がベターでしょうか？ -->
-                <div class="skill_wrap_left">
-                    <h3 class="skill_title_left_01">ウェブデザイン<br>グラフィックデザイン</h3>
+                <section class="skill_wrap_left">
+                    <h3 class="skill_title_left">ウェブデザイン<br>グラフィックデザイン</h3>
                     <div class="skill_content">
                         <div class="skill_feature">
                             <div class="icon_01"><img src="images/icon_design_01.svg" alt="ウェブ・グラフィックデザイン"></div>
@@ -80,9 +108,9 @@
                         </p>
                         <p class="skill_tool">ツール： Illustrator/Photoshop</p>
                     </div>
-                </div>
+                </section>
             </div>
-            <div class="skill_wrap_right">
+            <section class="skill_wrap_right">
                 <h3 class="skill_title_right">コーディング</h3>
                 <div class="skill_content">
                     <div class="skill_feature">
@@ -94,9 +122,9 @@
                     </p>
                     <p class="skill_tool">ツール： HTML/CSS/JavaScript</p>
                 </div>
-            </div>
-            <div class="skill_wrap_left">
-                <h3 class="skill_title_left_02">イラスト</h3>
+            </section>
+            <section class="skill_wrap_left">
+                <h3 class="skill_title_left">イラスト</h3>
                 <div class="skill_content">
                     <div class="skill_feature">
                         <div class="icon_03"><img src="images/icon_illust_01.svg" alt="イラスト"></div>
@@ -107,8 +135,8 @@
                     </p>
                     <p class="skill_tool">ツール： Procreate</p>
                 </div>
-            </div>
-            <div class="skill_wrap_right">
+            </section>
+            <section class="skill_wrap_right">
                 <h3 class="skill_title_right">写真撮影・編集</h3>
                 <div class="skill_content">
                     <div class="skill_feature">
@@ -120,7 +148,7 @@
                     </p>
                     <p class="skill_tool">ツール： 一眼レフ/Lightroom</p>
                 </div>
-            </div>
+            </section>
             <div class="pic_hand"><img src="images/hands_02.svg" alt="物語を書く手"></div>
         </section>
 
@@ -130,35 +158,48 @@
                 <div class="works_wrap_02">
                     <div class="pic_ink"><img src="images/line_ink.svg" alt="インク壺と羽ペン"></div>
                     <ul>
-                        <li><a href="works/index.html"><img src="images/btn_web.svg" alt="ウェブデザイン実績リンク"></a></li>
-                        <li><a href=""><img src="images/btn_graphic.svg" alt="グラフィックデザイン実績リンク"></a></li>
-                        <li><a href=""><img src="images/btn_illust.svg" alt="イラスト実績リンク"></a></li>
-                        <li><a href=""><img src="images/btn_photo.svg" alt="写真実績リンク"></a></li>
+                        <li><a href="works_webdesign/index.html"><img src="images/btn_web.svg" alt="ウェブデザイン実績リンク"></a>
+                        </li>
+                        <li><a href="works_graphicdesign/index.html"><img src="images/btn_graphic.svg"
+                                    alt="グラフィックデザイン実績リンク"></a></li>
+                        <li><a href="works_illustration/index.html"><img src="images/btn_illust.svg"
+                                    alt="イラスト実績リンク"></a></li>
+                        <li><a href="works_photo/index.html"><img src="images/btn_photo.svg" alt="写真実績リンク"></a></li>
                     </ul>
                 </div>
                 <div class="works_box"></div>
-                <p class="lead">これまでつむいだデザインやイラスト、写真をご紹介いたします。<br>お好きな物語を手に取ってご覧ください。</p>
+                <p class="lead">これまでつむいだデザインやイラスト、<br class="br_sp">写真をご紹介いたします。<br>お好きな物語を手に取ってご覧ください。</p>
             </div>
             <div class="pic_hand"><img src="images/hands_03.svg" alt="本を開く手"></div>
         </section>
 
         <section id="contact">
-            <h2 class="title_right">相談する</h2>
-            <p class="lead">デザインやイラスト、写真に関することなど、お客様が抱えているお悩みなどについて、お気軽にご相談・お問い合わせください。</p>
-            <form
-                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfhhBUnG9k05X9TqRr8JcZLNAiKkFSnX1Ux6qVUrf9XfPv7IQ/formResponse">
-                <div class="form_content">
-                    <label class="contact_name" for="name">お名前</label>
-                    <input id="name" type="text" name="entry.1060629140" placeholder="">
-                </div>
-                <div class="form_content">
-                    <label for="email">メールアドレス</label>
-                    <input id="email" type="text" name="entry.187525437" placeholder="">
-                </div>
-                <label class="msg" for="msg">お問い合わせ内容</label>
-                <textarea id="msg" name="entry.644460066" placeholder=""></textarea>
-                <button type="submit" name="button">おくる</button>
-            </form>
+            <div class="contact_wrap">
+                <h2 class="title_right">相談する</h2>
+                <p class="lead">デザインやイラスト、写真に関することなど、お客様が抱えているお悩みなどについて、お気軽にご相談・お問い合わせください。</p>
+            </div>
+            <div class="contact_content">
+                <div class="contact_back"></div>
+                <!-- <div class="back"><img src="images/contact.svg" alt="重ねた紙"></div> -->
+                <form
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfhhBUnG9k05X9TqRr8JcZLNAiKkFSnX1Ux6qVUrf9XfPv7IQ/formResponse"
+                    target="hidden_iframe" onsubmit="submitted=true;">
+                    <div class="form_content">
+                        <label class="contact_name" for="name">お名前</label>
+                        <input id="name" type="text" name="entry.1060629140" placeholder="">
+                    </div>
+                    <div class="form_content">
+                        <label class="contact_email" for="email">メールアドレス</label>
+                        <input id="email" type="text" name="entry.187525437" placeholder="">
+                    </div>
+                    <label class="msg" for="msg">お問い合わせ内容</label>
+                    <textarea id="msg" name="entry.644460066" placeholder=""></textarea>
+                    <button type="submit" name="button">おくる</button>
+                </form>
+                <script type="text/javascript"> var submitted = false;</script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none"
+                    onload="if(submitted){window.location='thanks.html' }"></iframe>
+            </div>
             <div class="pic_hand"><img src="images/hands_04.svg" alt="投函する手"></div>
         </section>
 
@@ -166,10 +207,10 @@
             <div class="about_wrap_01">
                 <h2 class="title_left">作者<br>　あとがき</h2>
                 <p class="lead">
-                    当サイトを最後までご覧いただき、ありがとうございました。<br>
-                    お悩みや世界観を一つの物語としてデザインにつむげるよう、<br>
+                    当サイトを最後までご覧いただき、<br class="br_sp">ありがとうございました。<br>
+                    お悩みや世界観を一つの物語として<br class="br_sp">デザインにつむげるよう、<br>
                     日々スキルアップに励んでいきます。<br>
-                    みなさまとご一緒にお仕事ができることを楽しみにしています。
+                    みなさまとご一緒にお仕事ができることを<br class="br_sp">楽しみにしています。
                 </p>
             </div>
             <div class="about_wrap_02">
@@ -272,10 +313,10 @@
             <li><a href="#skills">できること</a></li>
             <li class="has-child"><a href="#works">つくったもの</a>
                 <ul>
-                    <li><a href="works/index.html">ウェブ</a></li>
-                    <li><a href="">グラフィック</a></li>
-                    <li><a href="">イラスト</a></li>
-                    <li><a href="">写真</a></li>
+                    <li><a href="works_webdesign/index.html">ウェブ</a></li>
+                    <li><a href="works_graphicdesign/index.html">グラフィック</a></li>
+                    <li><a href="works_illustration/index.html">イラスト</a></li>
+                    <li><a href="works_photo/index.html">写真</a></li>
                 </ul>
             </li>
             <li><a href="#contact">相談する</a></li>

@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/* 実績リストページ */
+.pic_hand {
+    width: 490px;
+}
+
+#print h3 {
+    width: 455px;
+}
+
+#logo h3 {
+    width: 255px;
+}
+
+.list_text {
+    margin-top: -35px;
+}
+
+/* 各実績詳細ページ */
+.mock_img {
+    width: 900px;
+}
+
+#website .list_content {
+    margin-bottom: 145px;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_2" data-name="レイヤー 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.11 27.64">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .1em;
+      }
+
+      .cls-2 {
+        letter-spacing: .05em;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #987b5a;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.11px;
+      }
+
+      .cls-4 {
+        letter-spacing: .03em;
+      }
+
+      .cls-5 {
+        letter-spacing: .02em;
+      }
+
+      .cls-6 {
+        fill: #987b5a;
+        font-family: TsukuBRdGothicStd-R-83pv-RKSJ-H, 'FOT-TsukuBRdGothic Std';
+        font-size: 16px;
+      }
+
+      .cls-7 {
+        letter-spacing: .15em;
+      }
+    </style>
+  </defs>
+  <g id="_レイアウト" data-name="レイアウト">
+    <g>
+      <text class="cls-6" transform="translate(27.01 14.08)"><tspan class="cls-7" x="0" y="0">Instagra</tspan><tspan class="cls-5" x="78.16" y="0">m</tspan><tspan class="cls-1" x="91.73" y="0">を</tspan><tspan class="cls-4" x="109.33" y="0">見</tspan><tspan class="cls-2" x="125.81" y="0">る</tspan></text>
+      <polyline class="cls-3" points=".56 27.08 215.56 27.08 189.89 14.08"/>
+    </g>
+  </g>
+</svg>

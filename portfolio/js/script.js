@@ -61,6 +61,15 @@ $(window).on("load", function () {
     mediaQueriesWin(); /* ドロップダウンの関数を呼ぶ*/
 });
 
+// ハンバーガーメニュー
+$(function () {
+    // ハンバーガーメニュー
+    $(".sp_btn, .sp_nav li").on("click", function () {
+        $(".sp_nav").fadeToggle();
+        $(".sp_btn").toggleClass("open");
+    });
+});
+
 // はじめに部分のスライダー
 $(function () {
     $(".concept_slider")
@@ -159,21 +168,30 @@ $(window).on("scroll", function () {
 });
 
 // 実績リストスライダー
-$("#website .list_slider").slick({
-    asNavFor: "#website .list_slider_title",
+$(".list_slider").slick({
+    // asNavFor: "#website .list_slider_title",
     slidesToShow: 4,
     slidesToScroll: 4,
     arrows: true,
-    variablewidth: true,
-});
-$("#website .list_slider_title").slick({
-    draggable: false,
-    arrows: false,
     dots: true,
-    slidesToShow: 4,
-    slidesToScroll: 4,
     variablewidth: true,
 });
+// $("#website .list_slider").slick({
+//     // asNavFor: "#website .list_slider_title",
+//     slidesToShow: 4,
+//     slidesToScroll: 4,
+//     arrows: true,
+//     dots: true,
+//     variablewidth: true,
+// });
+// $("#website .list_slider_title").slick({
+//     draggable: false,
+//     arrows: false,
+//     dots: true,
+//     slidesToShow: 4,
+//     slidesToScroll: 4,
+//     variablewidth: true,
+// });
 
 // 実績詳細ページスライダー
 $(".photo_slider").slick({
