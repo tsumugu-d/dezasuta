@@ -114,6 +114,10 @@ h1 {
     font-size: 30px;
 }
 
+.sp_h1 {
+    display: none;
+}
+
 .pc_nav ul {
     display: flex;
     justify-content: center;
@@ -207,7 +211,7 @@ nav li.has-child ul li:active > ul {
     .sp_btn {
         display: block;
         position: absolute;
-        top: 25px;
+        top: 35%;
         right: 3%;
         height: 20px;
         cursor: pointer;
@@ -222,7 +226,7 @@ nav li.has-child ul li:active > ul {
         height: 3px;
         border-radius: 2px;
         /* トップと下層で色調整する */
-        background: #333333;
+        background: #736357;
         transition: 0.3s;
     }
 
@@ -234,7 +238,7 @@ nav li.has-child ul li:active > ul {
         width: 30px;
         height: 3px;
         border-radius: 2px;
-        background: #333333;
+        background: #736357;
         transition: 0.3s;
     }
 
@@ -265,6 +269,11 @@ nav li.has-child ul li:active > ul {
     .sp_btn.open span::after {
         top: 0;
         transform: rotate(135deg);
+    }
+
+    .toppage .sp_btn.open span::before,
+    .toppage .sp_btn.open span::after {
+        background: #736357;
     }
 
     /* ハンバーガーメニュー */
@@ -318,13 +327,13 @@ nav li.has-child ul li:active > ul {
 
     #header .has-child::before {
         right: -17px;
-        top: 8px;
+        top: 3px;
     }
 
     #header .has-child ul,
     .toppage .has-child ul {
         position: relative;
-        top: 0;
+        top: 13px;
         left: 0;
         width: 100%;
         /* top: 34px;
@@ -346,9 +355,21 @@ nav li.has-child ul li:active > ul {
     .header_wrap,
     .toppage .header_wrap {
         background: none;
+        height: 23vw;
+        margin-bottom: 15vw;
+    }
+
+    .pc_h1 {
+        display: none;
+    }
+
+    .sp_h1 {
+        display: block;
+        width: 17%;
     }
 
     .sp_btn {
+        top: 25%;
         right: 7%;
     }
 
@@ -358,6 +379,10 @@ nav li.has-child ul li:active > ul {
 
     nav ul {
         display: block;
+    }
+
+    #header .has-child::before {
+        top: 8px;
     }
 
     nav li.has-child ul {
@@ -413,13 +438,16 @@ h2 {
 footer {
     position: relative;
     width: 100%;
-    height: 390px;
+    /* height: 390px; */
+    height: 100%;
     margin-top: 280px;
     background: white;
     box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.1);
+    background-image: url(../images/footer_img_pc.svg);
+    background-size: 100% auto;
 }
 
-.footer_pic {
+/* .footer_pic {
     position: absolute;
     top: 55px;
     right: 0;
@@ -428,7 +456,7 @@ footer {
     margin: 0 auto;
     background-image: url(../images/footer_pic_pc.svg);
     background-size: cover;
-}
+} */
 
 .footer_pic img {
     width: 100%;
@@ -497,6 +525,7 @@ footer p {
     position: relative;
     z-index: 1;
     margin-top: 102px;
+    padding-bottom: 30px;
     font-size: 13px;
     letter-spacing: 0.1em;
     color: #987b5a;
@@ -528,12 +557,49 @@ footer p {
         flex-direction: column;
     }
 
+    footer li.has-child {
+        margin-right: 0;
+    }
+
+    footer li.has-child ul {
+        position: relative;
+        left: 40px !important;
+        top: 0;
+        width: 100%;
+        visibility: visible; /*JSで制御するため一旦表示*/
+        opacity: 1; /*JSで制御するため一旦表示*/
+        display: none; /*JSのslidetoggleで表示させるため非表示に*/
+        transition: none; /*JSで制御するためCSSのアニメーションを切る*/
+    }
+
     footer ul li {
         font-size: 15px;
     }
 
     footer ul li a {
         padding: 15px 30px;
+    }
+
+    footer ul li.has-child::before {
+        left: 133px;
+        top: 16px;
+    }
+
+    footer ul ul {
+        top: 0 !important;
+    }
+
+    footer ul ul li.has-child::before {
+        transform: rotate(135deg);
+        left: 20px;
+    }
+
+    footer ul li.has-child.active::before {
+        transform: rotate(-45deg);
+    }
+
+    footer ul li li a {
+        font-size: 14px;
     }
 
     .pagetop {
@@ -552,6 +618,11 @@ footer p {
 }
 
 @media screen and (max-width: 767px) {
+    footer {
+        background-image: url(../images/footer_img_sp.svg);
+        background-repeat: repeat;
+    }
+
     .footer_logo {
         top: -50px;
         width: 95px;
@@ -561,21 +632,6 @@ footer p {
         top: -30px;
     }
 
-    footer li.has-child {
-        margin-right: 0;
-    }
-
-    footer li.has-child ul {
-        position: relative;
-        left: 40px !important;
-        top: 0;
-        width: 100%;
-        visibility: visible; /*JSで制御するため一旦表示*/
-        opacity: 1; /*JSで制御するため一旦表示*/
-        display: none; /*JSのslidetoggleで表示させるため非表示に*/
-        transition: none; /*JSで制御するためCSSのアニメーションを切る*/
-    }
-
     footer ul li a {
         padding: 10px 30px;
     }
@@ -583,23 +639,6 @@ footer p {
     footer ul li.has-child::before {
         left: 126px;
         top: 18px;
-    }
-
-    footer ul ul {
-        top: 0 !important;
-    }
-
-    footer ul ul li.has-child::before {
-        transform: rotate(135deg);
-        left: 20px;
-    }
-
-    footer ul li.has-child.active::before {
-        transform: rotate(-45deg);
-    }
-
-    footer ul li li a {
-        font-size: 14px;
     }
 
     footer p {

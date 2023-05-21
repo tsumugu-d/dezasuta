@@ -33,7 +33,7 @@
 //ドロップダウンの設定を関数でまとめる
 function mediaQueriesWin() {
     var width = $(window).width();
-    if (width <= 768) {
+    if (width <= 1200) {
         //横幅が768px以下の場合
         $(".has-child>a").off("click"); //has-childクラスがついたaタグのonイベントを複数登録を避ける為offにして一旦初期状態へ
         $(".has-child>a").on("click", function () {
@@ -154,7 +154,7 @@ $(".pagetop").hide();
 $(window).on("scroll", function () {
     scrollHeight = $(document).height();
     scrollPosition = $(window).height() + $(window).scrollTop();
-    footHeight = $(".footer_wrap").innerHeight() - 65;
+    footHeight = $(".footer_wrap").innerHeight() - 70;
     if (scrollHeight - scrollPosition <= footHeight) {
         // ページトップボタンがフッター手前に来たらpositionをfixedからabsoluteに変更
         $("body").css({
@@ -169,29 +169,28 @@ $(window).on("scroll", function () {
 
 // 実績リストスライダー
 $(".list_slider").slick({
-    // asNavFor: "#website .list_slider_title",
     slidesToShow: 4,
     slidesToScroll: 4,
     arrows: true,
     dots: true,
     variablewidth: true,
+    responsive: [
+        {
+            breakpoint: 1000,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 4,
+            },
+        },
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+            },
+        },
+    ],
 });
-// $("#website .list_slider").slick({
-//     // asNavFor: "#website .list_slider_title",
-//     slidesToShow: 4,
-//     slidesToScroll: 4,
-//     arrows: true,
-//     dots: true,
-//     variablewidth: true,
-// });
-// $("#website .list_slider_title").slick({
-//     draggable: false,
-//     arrows: false,
-//     dots: true,
-//     slidesToShow: 4,
-//     slidesToScroll: 4,
-//     variablewidth: true,
-// });
 
 // 実績詳細ページスライダー
 $(".photo_slider").slick({
@@ -201,4 +200,14 @@ $(".photo_slider").slick({
     dots: true,
     variablewidth: true,
     adaptiveHeight: true,
+    responsive: [
+        {
+            breakpoint: 767,
+            settings: {
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            },
+        },
+    ],
 });

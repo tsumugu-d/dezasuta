@@ -146,7 +146,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: 17%;
+    width: 20%;
     margin-left: auto;
     /* margin-right: 4%; */
 }
@@ -295,9 +295,9 @@
 
 .slick-num {
     position: absolute;
-    bottom: 35px;
-    right: 80px;
-    font-size: 15px;
+    bottom: 5.5%;
+    right: 8%;
+    font-size: 1.5vw;
     color: #666666;
 }
 
@@ -314,6 +314,10 @@
     #concept .title_left {
         margin: 0 auto;
     }
+
+    .concept_slider {
+        margin-top: 80px;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -323,6 +327,8 @@
 
     .concept_slider {
         margin-top: 60px;
+        margin-left: auto;
+        margin-right: 0;
     }
 
     .slick-prev,
@@ -330,14 +336,18 @@
         width: 9%;
     }
 
-    .slick-num {
-        bottom: 20px;
-        right: 13px;
-        font-size: 13px;
+    .slick-next::before {
+        background-image: url(../images/btn_go_sp.svg);
+    }
+
+    .slick-prev::before {
+        background-image: url(../images/btn_back_sp.svg);
     }
 
     .slick-num {
-        margin-top: 200px;
+        bottom: 2.5%;
+        right: 5%;
+        font-size: 2.5vw;
     }
 
     #concept .pic_hand {
@@ -354,7 +364,7 @@
 #skills .lead {
     height: 440px;
     margin-top: 20px;
-    margin-right: 10%;
+    margin-right: 12%;
     writing-mode: vertical-rl;
     font-feature-settings: initial;
 }
@@ -1105,7 +1115,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 238px;
+    width: 40%;
 }
 
 .area h3 {
@@ -1143,9 +1153,12 @@
 }
 
 #like h4 {
+    display: flex;
+    align-items: center;
+    height: 3.5vh;
     margin-top: 36px;
     margin-left: 42px;
-    padding: 3px 3% 2px 3%;
+    padding-left: 3%;
     box-sizing: border-box;
     border-left: 7px solid #a39985;
     font-size: 20px;
@@ -1199,6 +1212,11 @@
         padding-top: 40px;
         border-top: 42px solid #a39985;
         border-left: none;
+    }
+
+    #like h4 {
+        padding-left: 2%;
+        border-left: 8px solid #a39985;
     }
 
     #bird {
@@ -1272,10 +1290,13 @@
         padding: 35px 20px 40px 0;
     }
 
+    #like h4 {
+        font-size: 18px;
+    }
+
     .area .pic {
         top: 15px;
         right: 15px;
-        width: 120px;
     }
 
     .area h3 {
@@ -1303,20 +1324,48 @@
 .thankyou {
     display: flex;
     align-items: center;
+    justify-content: center;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 55px 105px;
+    padding: 55px 7%;
     box-sizing: border-box;
     background: #f1eee8;
     border-radius: 30px;
 }
 
 .thankyou_pic {
-    width: 326px;
+    width: 32%;
 }
 
 .thankyou p {
     margin-left: 55px;
     font-size: 20px;
     line-height: 2.5;
+}
+
+@media screen and (max-width: 1000px) {
+    .thankyou {
+        margin: 0 5%;
+    }
+
+    .thankyou p {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .thankyou {
+        flex-direction: column;
+    }
+
+    .thankyou_pic {
+        width: 50%;
+    }
+
+    .thankyou p {
+        margin-top: 20px;
+        margin-left: 0;
+        text-align: center;
+        font-size: 15px;
+    }
 }
