@@ -498,13 +498,17 @@ section {
         top: -14vw;
     }
 
+    .works_content {
+        padding-top: 150px;
+    }
+
     .works_content h2 {
+        top: 40px;
         font-size: 20px;
     }
 
     .works_content h2::after {
-        top: -65px;
-        right: -30px;
+        transform: translateY(30%) translateX(-15%) rotate(135deg);
         width: 110px;
         height: 110px;
     }
