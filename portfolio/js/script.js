@@ -179,7 +179,7 @@ $(".list_slider").slick({
             breakpoint: 1000,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 4,
+                slidesToScroll: 3,
             },
         },
         {

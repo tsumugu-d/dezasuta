@@ -1,20 +1,29 @@
 @charset "utf-8";
 
 /* 実績リストページ */
-.pic_hand {
-    width: 490px;
-}
-
-#print h3 {
-    width: 455px;
-}
-
-#logo h3 {
-    width: 255px;
-}
-
 .list_text {
     margin-top: -35px;
+}
+
+.list_wrap h2::after {
+    transform: translateX(-25%) translateY(45%) rotate(135deg);
+}
+
+/* 4枚以上になったら消す */
+#logo .slick-track {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .list_text {
+        margin-top: 70px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .list_wrap h2::after {
+        transform: translateX(-25%) translateY(75%) rotate(135deg);
+    }
 }
 
 /* 各実績詳細ページ */

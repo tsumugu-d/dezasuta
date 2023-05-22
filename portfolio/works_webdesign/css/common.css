@@ -24,13 +24,11 @@ section {
     align-items: center;
     width: 17%;
     line-height: 1.2;
-    /* margin-left: 4%; */
 }
 
 .list_wrap h2::after {
     content: "";
     position: absolute;
-    /* left: -206px; */
     width: 230px;
     height: 230px;
     transform: translateX(-25%) translateY(5%) rotate(135deg);
@@ -43,15 +41,29 @@ section {
     z-index: -1;
 }
 
-.list_text {
-    width: 82.5%;
-    margin-left: auto;
-    padding: 25px 3% 15px 4%;
-    background: rgba(255, 255, 255, 0.7);
+.web_list .pic_hand {
+    width: 60.5%;
 }
 
-.web_list .list_text {
+.graphic_list .pic_hand {
+    width: 50%;
+}
+
+.illust_list .pic_hand {
+    width: 50%;
+}
+
+.list_photo .pic_hand {
+    width: 35%;
+}
+
+.list_text {
+    width: 82.5%;
     margin-top: -35px;
+    margin-left: auto;
+    padding: 25px 3% 15px 4%;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .list_text p {
@@ -89,17 +101,39 @@ section {
     body > section {
         padding: 0 3%;
     }
+
+    .list_text {
+        width: 100%;
+        margin: 70px auto 0 auto;
+    }
+
+    .list_wrap .pic_hand {
+        margin-top: auto;
+        margin-bottom: -40px;
+    }
 }
 
 @media screen and (max-width: 767px) {
+    body > section {
+        padding: 0 5%;
+    }
+
+    .list_wrap h2 {
+        padding-left: 3%;
+    }
+
     .list_wrap h2::after {
         width: 140px;
         height: 140px;
         transform: translateX(-25%) translateY(30%) rotate(135deg);
     }
 
-    .web_list .list_text {
-        margin: 0 auto;
+    .list_wrap .pic_hand {
+        width: 65%;
+    }
+
+    .list_photo .list_wrap .pic_hand {
+        width: 50%;
     }
 
     .list_text p {
@@ -125,6 +159,7 @@ section {
 
 .list_content h3 {
     display: inline-block;
+    margin-left: 5%;
     margin-bottom: 50px;
     padding: 0 2% 5px 2%;
     border-bottom: 1px solid #333333;
@@ -134,74 +169,82 @@ section {
 .list_slider_img {
     width: 220px;
     margin: 0 15px;
-    /* color: #beb4a0;
-    letter-spacing: 0.15em;
-    text-align: center; */
 }
 
 .list_slider h4 {
-    width: 215px;
     margin: 20px auto 0 auto;
-    /* margin: 20px 15px; */
     text-align: center;
     letter-spacing: 0.15em;
+    line-height: 1.56;
+}
+
+@media screen and (max-width: 1000px) {
+    .list_content h3 {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 767px) {
     .list_content h3 {
+        margin-bottom: 30px;
+        padding-bottom: 0;
         font-size: 20px;
     }
 
     .list_slider h4 {
+        margin-top: 10px;
         font-size: 14px;
         line-height: 1.79;
         letter-spacing: 0.03;
+        line-height: 1.33;
     }
 }
 
 /* スライダー調整 */
-.list_slider .slick-prev,
-.list_slider .slick-next {
-    width: 4.5%;
-    height: 45px;
+.list_slider {
+    width: 90%;
+    margin: 0 auto;
+    /* 検証 */
+    /* display: flex;
+    flex-wrap: wrap; */
 }
 
 .list_slider .slick-prev {
-    top: 90px;
-    left: -48px;
-    transform: scale(-1, 1);
+    top: 41%;
+    left: -2.5%;
     z-index: 1;
 }
 
 .list_slider .slick-next {
-    top: 92px;
-    /* right: -48px; */
-    /* right: -9%; */
-    transform: translateX(-100%);
+    top: 41%;
+    right: -2%;
     z-index: 1;
 }
 
-/* .list_slider .slick-next {
-    top: 114px;
-    right: -48px;
-    z-index: 1;
-} */
-
 .list_slider .slick-arrow::before {
     content: "";
-    width: 100%;
-    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid #998675;
+    border-right: 2px solid #998675;
 }
 
 .list_slider .slick-prev::before,
 .list_slider .slick-next::before {
-    background-image: url(../images/list_slider_arrow.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
     opacity: 1;
+}
+
+.list_slider .slick-prev::before {
+    transform: rotate(-135deg);
+}
+
+.list_slider .slick-next::before {
+    transform: rotate(45deg);
 }
 
 .list_slider img {
@@ -246,6 +289,33 @@ section {
     display: none;
 }
 
+@media screen and (max-width: 767px) {
+    .list_content .slick-dots {
+        bottom: -65px;
+    }
+
+    .list_content .slick-dots li {
+        width: 35px;
+        height: 35px;
+    }
+
+    .list_content .slick-dots li button {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .list_slider {
+        width: 100%;
+    }
+
+    .list_slider .slick-prev::before,
+    .list_slider .slick-next::before {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 /* 各実績詳細ページ */
 .works_detail_wrap {
     position: relative;
@@ -285,6 +355,8 @@ section {
     top: 60px;
     left: 50%;
     transform: translateX(-50%);
+    writing-mode: horizontal-tb;
+    font-feature-settings: "palt";
 }
 
 .works_content h2::after {
@@ -302,8 +374,8 @@ section {
     display: flex;
     align-items: center;
     margin: 0 10% 85px 10%;
-    border-top: 1px solid #beb4a0;
-    border-bottom: 1px solid #beb4a0;
+    border-top: 1.5px solid #beb4a0;
+    border-bottom: 1.5px solid #beb4a0;
 }
 
 .works_about dl {
@@ -323,7 +395,6 @@ section {
 .works_about dt {
     width: 30%;
     padding: 20px 0 20px 5%;
-    /* padding: 20px 30px 20px 30px; */
     text-align-last: justify;
 }
 
@@ -331,11 +402,6 @@ section {
     width: 70%;
     padding: 20px 0 20px 8%;
 }
-
-/* .works_about dd:last-child,
-.works_about dt:last-child {
-    border-bottom: none;
-} */
 
 .works_about dl dt:nth-last-child(2),
 .works_about dl dd:last-child {
@@ -365,6 +431,10 @@ section {
 
 .works_content > p {
     margin: 30px 11.5% 0 11.5%;
+}
+
+.detail_img {
+    margin: 70px auto 0 auto;
 }
 
 @media screen and (max-width: 1000px) {
@@ -406,7 +476,7 @@ section {
         width: 100%;
         padding: 35px 5%;
         box-sizing: border-box;
-        border-top: 1px solid #beb4a0;
+        border-top: 1.5px solid #beb4a0;
     }
 
     .works_content h3 {
@@ -424,8 +494,8 @@ section {
         padding-top: 50px;
     }
     .works_detail_wrap::before {
-        width: 45%;
-        top: -13vw;
+        width: 50%;
+        top: -14vw;
     }
 
     .works_content h2 {
@@ -458,7 +528,6 @@ section {
 
 .img_horizonal {
     width: 100%;
-    /* width: 830px; */
 }
 
 .img_vertical {
@@ -467,11 +536,9 @@ section {
 
 .photo_slider .slick-slide {
     width: 830px;
-    /* height: 33vw; */
 }
 
 .photo_slider .slick-slide img {
-    /* height: 100%; */
     margin: 0 auto;
 }
 
