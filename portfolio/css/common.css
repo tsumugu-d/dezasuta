@@ -84,7 +84,10 @@ body {
 
 /* ヘッダー */
 .header_wrap {
-    /* ハンバーガーメニューようにrelative追加 */
+    /* メニュー動き検証のため変更＋追加 */
+    /* position: fixed;
+    z-index: 999; */
+    /* ハンバーガーメニュー用にrelative追加 */
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -96,6 +99,38 @@ body {
     box-sizing: border-box;
     padding: 0 1% 0 4%;
 }
+
+/* メニューのスクロールに伴う動き検証 */
+/* #header_wrap.UpMove {
+    animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+#header_wrap.DownMove {
+    animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+/* ここまで */
 
 .toppage .header_wrap {
     position: absolute;
@@ -133,15 +168,43 @@ h1 {
 }
 
 .pc_nav ul li a {
+    /* ホバーアニメーション用にrelative追加 */
+    position: relative;
     display: block;
-    padding: 24px 30px;
+    margin: 24px 30px;
     transition: all 0.3s;
+}
+
+.pc_nav ul li a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #333333;
+    bottom: -10px;
+    left: -2px;
+    /*横方向0で非表示にする*/
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    /*中央を基点にアニメーション*/
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    /*アニメーションの速度設定*/
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.pc_nav ul li a:hover::after {
+    /*横方向等倍まで拡大*/
+    transform: scale(1, 1);
 }
 
 .pc_nav ul li li a {
     display: flex;
     align-items: center;
-    padding: 0 0 10px 25px;
+    margin: 20px 30px;
+    /* padding: 0 0 10px 25px; */
     text-align: start;
     font-size: 16px;
 }
@@ -175,7 +238,8 @@ h1 {
     left: 13px;
     z-index: 4;
     background: #ddd4c6;
-    width: 168px;
+    width: 194px;
+    /* width: 168px; */
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s;
@@ -438,7 +502,6 @@ h2 {
 footer {
     position: relative;
     width: 100%;
-    /* height: 390px; */
     height: 100%;
     margin-top: 280px;
     background: white;
@@ -447,20 +510,8 @@ footer {
     background-size: 100% auto;
 }
 
-/* .footer_pic {
-    position: absolute;
-    top: 55px;
-    right: 0;
-    width: 100%;
-    height: 334px;
-    margin: 0 auto;
-    background-image: url(../images/footer_pic_pc.svg);
-    background-size: cover;
-} */
-
 .footer_pic img {
     width: 100%;
-    /* width: 1360px; */
 }
 
 .footer_logo {
@@ -484,7 +535,7 @@ footer ul {
 footer ul ul {
     display: block;
     background: none !important;
-    top: 56px !important;
+    top: 45px !important;
 }
 
 footer ul li {
@@ -493,17 +544,44 @@ footer ul li {
 }
 
 footer ul li a {
+    /* ホバーアニメーション用にrelative追加 */
+    position: relative;
     display: block;
-    padding: 24px 30px;
+    margin: 24px 30px;
     transition: all 0.3s;
 }
 
 footer ul li li a {
     display: flex;
     align-items: center;
-    padding: 0 0 10px 25px;
+    margin: 20px 30px;
     text-align: start;
     font-size: 16px;
+}
+
+footer ul li a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #333333;
+    bottom: -10px;
+    left: -2px;
+    /*横方向0で非表示にする*/
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    /*中央を基点にアニメーション*/
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    /*アニメーションの速度設定*/
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+footer ul li a:hover::after {
+    /*横方向等倍まで拡大*/
+    transform: scale(1, 1);
 }
 
 footer ul li li a::before {
@@ -524,7 +602,7 @@ footer ul li.has-child ul li:active > ul {
 footer p {
     position: relative;
     z-index: 1;
-    margin-top: 102px;
+    margin-top: 130px;
     padding-bottom: 30px;
     font-size: 13px;
     letter-spacing: 0.1em;
@@ -577,7 +655,7 @@ footer p {
     }
 
     footer ul li a {
-        padding: 15px 30px;
+        margin: 15px 30px;
     }
 
     footer ul li.has-child::before {
@@ -634,7 +712,15 @@ footer p {
     }
 
     footer ul li a {
-        padding: 10px 30px;
+        margin: 10px 30px;
+    }
+
+    footer ul li a::after {
+        bottom: 0;
+    }
+
+    footer ul li li a {
+        margin: 8px 30px;
     }
 
     footer ul li.has-child::before {

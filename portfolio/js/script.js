@@ -28,6 +28,7 @@
     };
     s.parentNode.insertBefore(tk, s);
 })(document);
+// Font読み込みここまで
 
 // ドロップダウンメニュー
 //ドロップダウンの設定を関数でまとめる
@@ -60,13 +61,63 @@ $(window).resize(function () {
 $(window).on("load", function () {
     mediaQueriesWin(); /* ドロップダウンの関数を呼ぶ*/
 });
+// ドロップダウンメニューここまで
 
 // ハンバーガーメニュー
 $(function () {
-    // ハンバーガーメニュー
     $(".sp_btn, .sp_nav li").on("click", function () {
         $(".sp_nav").fadeToggle();
         $(".sp_btn").toggleClass("open");
+    });
+});
+// ハンバーガーメニューここまで
+
+// // グローバルメニュー動き
+// var beforePos = 0; //スクロールの値の比較用の設定
+
+// //スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
+// function ScrollAnime() {
+//     var elemTop = $("#main").offset().top; //#mainの位置まできたら
+//     var scroll = $(window).scrollTop();
+//     //ヘッダーの出し入れをする
+//     if (scroll == beforePos) {
+//         //IE11対策で処理を入れない
+//     } else if (elemTop > scroll || 0 > scroll - beforePos) {
+//         //ヘッダーが上から出現する
+//         $("#header_wrap").removeClass("UpMove"); //.header_wrapにUpMoveというクラス名を除き
+//         $("#header_wrap").addClass("DownMove"); //.header_wrapにDownMoveのクラス名を追加
+//     } else {
+//         //ヘッダーが上に消える
+//         $("#header_wrap").removeClass("DownMove"); //.header_wrapにDownMoveというクラス名を除き
+//         $("#header_wrap").addClass("UpMove"); //.header_wrapにUpMoveのクラス名を追加
+//     }
+
+//     beforePos = scroll; //現在のスクロール値を比較用のbeforePosに格納
+// }
+
+// // 画面をスクロールをしたら動かしたい場合の記述
+// $(window).scroll(function () {
+//     ScrollAnime(); //スクロール途中でヘッダーが消え、上にスクロールすると復活する関数を呼ぶ
+// });
+
+// // ページが読み込まれたらすぐに動かしたい場合の記述
+// $(window).on("load", function () {
+//     ScrollAnime(); //スクロール途中でヘッダーが消え、上にスクロールすると復活する関数を呼ぶ
+// });
+// // グローバルメニュー動きここまで
+
+// フェードインアニメーション
+$(function () {
+    $(window).scroll(function () {
+        const windowHeight = $(window).height();
+        const scroll = $(window).scrollTop();
+
+        $(".element").each(function () {
+            const targetPosition = $(this).offset().top;
+            if (scroll > targetPosition - windowHeight + 150) {
+                $(this).addClass("is-fadein");
+            }
+        });
     });
 });
 
@@ -98,6 +149,7 @@ $(function () {
         }
     );
 });
+// はじめに部分スライダーここまで
 
 // 作者あとがきタブ切り替え
 //任意のタブにURLからリンクするための設定
@@ -136,16 +188,25 @@ $(window).on("load", function () {
     var hashName = location.hash; //リンク元の指定されたURLのハッシュタグを取得
     GethashID(hashName); //設定したタブの読み込み
 });
+// タブ切り替えここまで
 
 // ページトップボタン
 // 一旦、ボタンを隠す
-$(".pagetop").hide();
+$(".toppage .pagetop").hide();
 // 一定pxスクロールしたらボタンがフェードインで現れる
 $(window).scroll(function () {
     if ($(this).scrollTop() > 550) {
-        $(".pagetop").fadeIn();
+        $(".toppage .pagetop").fadeIn();
     } else {
-        $(".pagetop").fadeOut();
+        $(".toppage .pagetop").fadeOut();
+    }
+});
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+        $(".lowerpage .pagetop").fadeIn();
+    } else {
+        $(".lowerpage .pagetop").fadeOut();
     }
 });
 
@@ -166,6 +227,7 @@ $(window).on("scroll", function () {
         });
     }
 });
+// ページトップボタンここまで
 
 // 実績リストスライダー
 $(".list_slider").slick({
@@ -191,6 +253,7 @@ $(".list_slider").slick({
         },
     ],
 });
+// 実績リストスライドここまで
 
 // 実績詳細ページスライダー
 $(".photo_slider").slick({
@@ -211,3 +274,4 @@ $(".photo_slider").slick({
         },
     ],
 });
+// 実績詳細ページスライダーここまで

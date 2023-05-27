@@ -1,0 +1,742 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dt,
+dd,
+ul,
+li,
+button,
+form {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #333333;
+    font-family: "fot-tsukubrdgothic-std", "游ゴシック体", YuGothic,
+        "游ゴシック", "Yu Gothic", "メイリオ", "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-feature-settings: "palt";
+    /* 要確認 */
+    letter-spacing: 0.25em;
+    text-align: justify;
+}
+@media screen and (max-width: 767px) {
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    dl,
+    dt,
+    dd,
+    ul,
+    li,
+    button,
+    form {
+        line-height: 1.87;
+        letter-spacing: 0.18em;
+    }
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+/* 背景など */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    background-image: url(../images/background_pc-80.jpg);
+    background-size: 100% auto;
+}
+
+/* ヘッダー */
+.header_wrap {
+    /* お試し4のメニュー動き検証のため変更＋追加 */
+    /* position: fixed;
+    z-index: 999; */
+    /* ハンバーガーメニュー用にrelative追加 */
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 140px;
+    background: #ddd4c6;
+    box-sizing: border-box;
+    padding: 0 1% 0 4%;
+}
+
+/* メニューのスクロールに伴う動き検証 */
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* #header_wrap.UpMove {
+    animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+#header_wrap.DownMove {
+    animation: DownAnime 0.5s forwards;
+}
+
+@keyframes DownAnime {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+/* ここまで */
+
+.toppage .header_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.pc_nav {
+    margin-left: auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.sp_h1 {
+    display: none;
+}
+
+.pc_nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.pc_nav ul ul {
+    display: block;
+}
+
+.pc_nav ul li {
+    position: relative;
+    font-size: 18px;
+}
+
+.pc_nav ul li a {
+    /* ホバーアニメーション用にrelative追加 */
+    position: relative;
+    display: block;
+    margin: 24px 30px;
+    transition: all 0.3s;
+}
+
+.pc_nav ul li a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #333333;
+    bottom: -10px;
+    left: -2px;
+    /*横方向0で非表示にする*/
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    /*中央を基点にアニメーション*/
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    /*アニメーションの速度設定*/
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.pc_nav ul li a:hover::after {
+    /*横方向等倍まで拡大*/
+    transform: scale(1, 1);
+}
+
+.pc_nav ul li li a {
+    display: flex;
+    align-items: center;
+    margin: 20px 30px;
+    /* padding: 0 0 10px 25px; */
+    text-align: start;
+    font-size: 16px;
+}
+
+.pc_nav ul li li a::before {
+    content: "";
+    border-top: 1px solid;
+    width: 0.8em;
+    margin-right: 1em;
+}
+
+.has-child {
+    margin-right: 25px;
+}
+
+.has-child::before {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 27px;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #333333;
+    transform: rotate(135deg);
+}
+
+.has-child ul {
+    position: absolute;
+    top: 68px;
+    left: 13px;
+    z-index: 4;
+    background: #ddd4c6;
+    width: 194px;
+    /* width: 168px; */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.toppage .has-child ul {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+nav li.has-child:hover > ul,
+nav li.has-child ul li:hover > ul,
+nav li.has-child:active > ul,
+nav li.has-child ul li:active > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sp_nav,
+.sp_btn {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .toppage .header_wrap {
+        background: none;
+    }
+
+    .pc_nav {
+        display: none;
+    }
+
+    /* ハンバーガー */
+    .sp_btn {
+        display: block;
+        position: absolute;
+        top: 35%;
+        right: 3%;
+        height: 20px;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .sp_btn span {
+        display: block;
+        position: relative;
+        top: 10px;
+        width: 30px;
+        height: 3px;
+        border-radius: 2px;
+        /* トップと下層で色調整する */
+        background: #736357;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        border-radius: 2px;
+        background: #736357;
+        transition: 0.3s;
+    }
+
+    .toppage .sp_btn span,
+    .toppage .sp_btn span::before,
+    .toppage .sp_btn span::after {
+        background: white;
+    }
+
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    /* ハンバーガー閉じる */
+    .sp_btn.open span {
+        background: transparent;
+    }
+
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+    }
+
+    .toppage .sp_btn.open span::before,
+    .toppage .sp_btn.open span::after {
+        background: #736357;
+    }
+
+    /* ハンバーガーメニュー */
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.85);
+        z-index: 2;
+    }
+
+    .sp_nav > ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .pc_nav ul {
+        display: block;
+    }
+
+    .sp_nav ul li {
+        position: relative;
+        margin: 15px;
+        font-size: 16px;
+    }
+
+    .sp_nav ul li a {
+        display: block;
+        transition: all 0.3s;
+    }
+
+    .sp_nav ul li li a {
+        display: flex;
+        align-items: center;
+        padding: 0 0 10px 25px;
+        text-align: start;
+        font-size: 16px;
+    }
+
+    .sp_nav ul li li a::before {
+        content: "";
+        border-top: 1px solid;
+        width: 0.8em;
+        margin-right: 1em;
+    }
+
+    #header .has-child::before {
+        right: -17px;
+        top: 3px;
+    }
+
+    #header .has-child ul,
+    .toppage .has-child ul {
+        position: relative;
+        top: 13px;
+        left: 0;
+        width: 100%;
+        /* top: 34px;
+        left: 26px; */
+        /* width: 208px; */
+        visibility: visible;
+        opacity: 1;
+        display: none;
+        transition: none;
+        background: none;
+    }
+
+    #header .has-child ul li {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header_wrap,
+    .toppage .header_wrap {
+        background: none;
+        height: 23vw;
+        margin-bottom: 15vw;
+    }
+
+    .pc_h1 {
+        display: none;
+    }
+
+    .sp_h1 {
+        display: block;
+        width: 17%;
+    }
+
+    .sp_btn {
+        top: 25%;
+        right: 7%;
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    nav ul {
+        display: block;
+    }
+
+    #header .has-child::before {
+        top: 8px;
+    }
+
+    nav li.has-child ul {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        visibility: visible; /*JSで制御するため一旦表示*/
+        opacity: 1; /*JSで制御するため一旦表示*/
+        display: none; /*JSのslidetoggleで表示させるため非表示に*/
+        transition: none; /*JSで制御するためCSSのアニメーションを切る*/
+    }
+
+    /*矢印の位置と向き*/
+
+    nav ul li.has-child::before {
+        left: 105px;
+    }
+
+    nav ul ul li.has-child::before {
+        transform: rotate(135deg);
+        left: 20px;
+    }
+
+    nav ul li.has-child.active::before {
+        transform: rotate(-45deg);
+    }
+}
+
+/* メイン */
+
+/* h2は実績個別ページのみ設定変える */
+h2 {
+    font-size: 40px;
+    letter-spacing: 0.18em;
+    writing-mode: vertical-rl;
+    font-feature-settings: initial;
+}
+
+.works_detail h2 {
+    font-size: 30px;
+    writing-mode: horizontal-tb;
+    font-feature-settings: "palt";
+}
+
+@media screen and (max-width: 767px) {
+    h2 {
+        font-size: 30px;
+    }
+}
+
+/* フッター */
+footer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 280px;
+    background: white;
+    box-shadow: 0px -8px 10px rgba(0, 0, 0, 0.1);
+    background-image: url(../images/footer_img_pc.svg);
+    background-size: 100% auto;
+}
+
+.footer_pic img {
+    width: 100%;
+}
+
+.footer_logo {
+    position: relative;
+    top: -80px;
+    margin: 0 auto;
+    width: 175px;
+    z-index: 1;
+}
+
+footer ul {
+    position: relative;
+    top: -47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+footer ul ul {
+    display: block;
+    background: none !important;
+    top: 45px !important;
+}
+
+footer ul li {
+    position: relative;
+    font-size: 18px;
+}
+
+footer ul li a {
+    /* ホバーアニメーション用にrelative追加 */
+    position: relative;
+    display: block;
+    margin: 24px 30px;
+    transition: all 0.3s;
+}
+
+footer ul li li a {
+    display: flex;
+    align-items: center;
+    margin: 20px 30px;
+    text-align: start;
+    font-size: 16px;
+}
+
+footer ul li a::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #333333;
+    bottom: -10px;
+    left: -2px;
+    /*横方向0で非表示にする*/
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    /*中央を基点にアニメーション*/
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    /*アニメーションの速度設定*/
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+footer ul li a:hover::after {
+    /*横方向等倍まで拡大*/
+    transform: scale(1, 1);
+}
+
+footer ul li li a::before {
+    content: "";
+    border-top: 1px solid;
+    width: 0.8em;
+    margin-right: 1em;
+}
+
+footer ul li.has-child:hover > ul,
+footer ul li.has-child ul li:hover > ul,
+footer ul li.has-child:active > ul,
+footer ul li.has-child ul li:active > ul {
+    visibility: visible;
+    opacity: 1;
+}
+
+footer p {
+    position: relative;
+    z-index: 1;
+    margin-top: 130px;
+    padding-bottom: 30px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: #987b5a;
+    text-align: center;
+}
+
+.pagetop {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    width: 95px;
+    height: 220px;
+    background-image: url(../images/top_btn.svg);
+    background-size: cover;
+}
+
+.pagetop a {
+    position: absolute;
+    top: 85px;
+    left: 14%;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 1000px) {
+    footer ul {
+        flex-direction: column;
+    }
+
+    footer li.has-child {
+        margin-right: 0;
+    }
+
+    footer li.has-child ul {
+        position: relative;
+        left: 40px !important;
+        top: 0;
+        width: 100%;
+        visibility: visible; /*JSで制御するため一旦表示*/
+        opacity: 1; /*JSで制御するため一旦表示*/
+        display: none; /*JSのslidetoggleで表示させるため非表示に*/
+        transition: none; /*JSで制御するためCSSのアニメーションを切る*/
+    }
+
+    footer ul li {
+        font-size: 15px;
+    }
+
+    footer ul li a {
+        margin: 15px 30px;
+    }
+
+    footer ul li.has-child::before {
+        left: 133px;
+        top: 16px;
+    }
+
+    footer ul ul {
+        top: 0 !important;
+    }
+
+    footer ul ul li.has-child::before {
+        transform: rotate(135deg);
+        left: 20px;
+    }
+
+    footer ul li.has-child.active::before {
+        transform: rotate(-45deg);
+    }
+
+    footer ul li li a {
+        font-size: 14px;
+    }
+
+    .pagetop {
+        right: 20px;
+        width: 55px;
+        height: 130px;
+    }
+
+    .pagetop a {
+        top: 50px;
+        left: 11%;
+        font-size: 13px;
+        line-height: 1.38;
+        letter-spacing: 0.18em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    footer {
+        margin-top: 200px;
+        background-image: url(../images/footer_img_sp.svg);
+        background-repeat: repeat;
+    }
+
+    .footer_logo {
+        top: -50px;
+        width: 95px;
+    }
+
+    footer ul {
+        top: -30px;
+    }
+
+    footer ul li a {
+        margin: 10px 30px;
+    }
+
+    footer ul li a::after {
+        bottom: 0;
+    }
+
+    footer ul li li a {
+        margin: 8px 30px;
+    }
+
+    footer ul li.has-child::before {
+        left: 126px;
+        top: 18px;
+    }
+
+    footer p {
+        margin-top: 10px;
+        font-size: 10px;
+    }
+}
